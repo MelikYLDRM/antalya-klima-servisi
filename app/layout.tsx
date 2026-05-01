@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         template: "%s | Antalya Klima Servisi",
     },
     description:
-        "Antalya Muratpaşa'da profesyonel klima tamiri, montajı ve bakımı. Buzdolabı ve çamaşır makinesi tamiri. Aynı gün servis, garantili işçilik. Hemen arayın: 0542 654 61 13",
+        "Antalya Muratpaşa'da profesyonel klima tamiri, montajı ve bakımı. Buzdolabı ve çamaşır makinesi tamiri. Hemen arayın: 0542 654 61 13",
     keywords: [
         "antalya klima tamiri",
         "antalya klima servisi",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         title:
             "Antalya Klima Tamiri | Muratpaşa Klima Montaj Bakım Servisi | 0542 654 61 13",
         description:
-            "Antalya Muratpaşa'da profesyonel klima tamiri, montajı ve bakımı. Buzdolabı ve çamaşır makinesi tamiri. Aynı gün servis, garantili işçilik.",
+            "Antalya Muratpaşa'da profesyonel klima tamiri, montajı ve bakımı. Buzdolabı ve çamaşır makinesi tamiri.",
         images: [
             {
                 url: "/og-image.jpg",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Antalya Klima Tamiri | 0542 654 61 13",
         description:
-            "Antalya Muratpaşa'da profesyonel klima tamiri, montajı, bakımı. Buzdolabı ve çamaşır makinesi tamiri. Aynı gün servis.",
+            "Antalya Muratpaşa'da profesyonel klima tamiri, montajı, bakımı. Buzdolabı ve çamaşır makinesi tamiri.",
         images: ["/og-image.jpg"],
     },
     robots: {

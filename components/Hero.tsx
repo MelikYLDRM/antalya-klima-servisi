@@ -3,8 +3,6 @@ const PHONE_DISPLAY = "0542 654 61 13";
 const WA_LINK = `https://wa.me/90${PHONE.slice(1)}?text=Merhaba,%20klima%20servisi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`;
 
 const badges = [
-    { icon: "⚡", text: "Aynı Gün Servis" },
-    { icon: "🛡️", text: "Garantili İşçilik" },
     { icon: "🔧", text: "Uzman Teknisyen" },
     { icon: "💰", text: "Uygun Fiyat" },
 ];

@@ -1,17 +1,5 @@
 const reasons = [
     {
-        icon: "⚡",
-        title: "Aynı Gün Servis",
-        description:
-            "Sabah aradığınız arızayı çoğunlukla aynı gün çözüyoruz. Acil durumlar için en kısa sürede yanınızdayız.",
-    },
-    {
-        icon: "🛡️",
-        title: "Garantili İşçilik",
-        description:
-            "Tüm tamir ve montaj işlemlerimiz garantilidir. Yapılan işlemin aynı sorunla dönmesi durumunda ücretsiz müdahale ederiz.",
-    },
-    {
         icon: "👨‍🔧",
         title: "Uzman Teknisyen",
         description:
@@ -41,7 +29,6 @@ const stats = [
     { value: "10+", label: "Yıl Deneyim" },
     { value: "5000+", label: "Mutlu Müşteri" },
     { value: "% 98", label: "Memnuniyet Oranı" },
-    { value: "Aynı Gün", label: "Servis Garantisi" },
 ];
 
 export default function WhyUs() {
