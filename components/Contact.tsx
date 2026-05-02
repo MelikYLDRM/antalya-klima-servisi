@@ -141,7 +141,7 @@ export default function Contact() {
                                 <div className="flex justify-between">
                                     <span className="text-gray-600">Pazartesi – Cumartesi</span>
                                     <span className="font-semibold text-gray-900">
-                                        08:00 – 20:00
+                                        09:30 – 19:00
                                     </span>
                                 </div>
                                 <div className="flex justify-between">

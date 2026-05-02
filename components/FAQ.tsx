@@ -34,11 +34,6 @@ const faqItems = [
             "Muratpaşa, Kepez, Konyaaltı, Döşemealtı, Aksu ve Antalya merkezdeki tüm mahallelere klima montajı ve tamir hizmeti veriyoruz. Servis bölgesi hakkında bilgi almak için bizi arayabilirsiniz.",
     },
     {
-        question: "Çamaşır makinesi tamirinde garanti veriyor musunuz?",
-        answer:
-            "Evet, tüm tamir işlemlerimiz garantilidir. Yapılan onarım için garantimiz kapsamında aynı arıza tekrarlanırsa ücretsiz müdahale sağlıyoruz. Kullanılan yedek parçalar için de tedarikçi garantisi geçerlidir.",
-    },
-    {
         question: "Klima tamiri için keşif ücreti alıyor musunuz?",
         answer:
             "Hayır, keşif ücreti almıyoruz. Teknisyenimiz adresinize gelir, cihazı inceler ve tamir fiyatını bildirir. Tamir için onay vermeniz durumunda işe başlanır. Tamir yapılmaması durumunda herhangi bir ücret talep edilmez.",
