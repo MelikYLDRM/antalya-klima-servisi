@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         "antalya çamaşır makinesi tamiri",
         "antalya beyaz eşya tamiri",
         "antalya klima arıza",
-        "antalya klima servisi 7/24",
+        "antalya klima servisi muratpaşa",
         "tahılpazarı klima servisi",
     ],
     authors: [{ name: "Antalya Klima Beyaz Eşya Servis" }],

@@ -25,7 +25,7 @@ export default function Footer() {
                             Klima veya Beyaz Eşya Arızanız mı Var?
                         </p>
                         <p className="text-blue-200">
-                            Hemen arayın, aynı gün çözüm sağlayalım.
+                            Hemen arayın, profesyonel çözüm sunalım.
                         </p>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3">

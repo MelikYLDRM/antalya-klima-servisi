@@ -39,7 +39,7 @@ export default function Hero() {
                                 clipRule="evenodd"
                             />
                         </svg>
-                        Antalya Muratpaşa — 7/24 Servis
+                        Antalya Muratpaşa
                     </p>
 
                     <h1
@@ -57,8 +57,7 @@ export default function Hero() {
                     <p className="text-blue-100 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
                         Muratpaşa ve tüm Antalya&apos;ya profesyonel klima tamiri, montajı,
                         gaz dolumu ve bakımı hizmeti veriyoruz. Buzdolabı ve çamaşır
-                        makinesi arızalarında da yanınızdayız. Aynı gün müdahale, garantili
-                        işçilik.
+                        makinesi arızalarında da yanınızdayız.
                     </p>
 
                     {/* CTA Buttons */}

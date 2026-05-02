@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PHONE = "05426546113";
 const PHONE_DISPLAY = "0542 654 61 13";
 
@@ -11,8 +13,9 @@ const services = [
             </svg>
         ),
         title: "Klima Tamiri",
+        image: "/images/klimatamir.jpg",
         description:
-            "Her marka ve model klimanızın arızasını hızlıca tespit eder, aynı gün tamir ederiz. Soğutmuyor, sesli çalışıyor, su akıtıyor? Hemen arayın.",
+            "Her marka ve model klimanızın arızasını hızlıca tespit ederiz. Soğutmuyor, sesli çalışıyor, su akıtıyor? Hemen arayın.",
         items: [
             "Soğutma / Isıtma Problemi",
             "Kompresör Tamiri",
@@ -30,6 +33,7 @@ const services = [
             </svg>
         ),
         title: "Klima Montajı",
+        image: "/images/klima-montaji-yeni.jpg",
         description:
             "Split, inverter, kaset tipi klimaların profesyonel montajı. Doğru konumlama, sızdırmaz boru bağlantısı, tam gaz dolumu ile eksiksiz kurulum.",
         items: [
@@ -49,6 +53,7 @@ const services = [
             </svg>
         ),
         title: "Klima Bakımı",
+        image: "/images/klimabakim.jpg",
         description:
             "Yıllık periyodik bakım ile klimanızın ömrünü uzatın, enerji tüketimini azaltın. Temizlik, kontrol ve gaz seviyesi ölçümü dahildir.",
         items: [
@@ -68,6 +73,7 @@ const services = [
             </svg>
         ),
         title: "Buzdolabı Tamiri",
+        image: "/images/buzdolabitamir.webp",
         description:
             "Buzdolabınız soğutmuyor, buz yapıyor, ses çıkarıyor veya su akıtıyor mu? Yerinde ve hızlı tamir ile yeniden soğutuyor.",
         items: [
@@ -87,6 +93,7 @@ const services = [
             </svg>
         ),
         title: "Çamaşır Makinesi Tamiri",
+        image: "/images/camasirtamir.png",
         description:
             "Çamaşır makineniz çalışmıyor, sızdırıyor, hata kodu mu veriyor? Elektronik kart, kapı kilidi, pompa tamirlerinde hızlı çözüm.",
         items: [
@@ -152,43 +159,56 @@ export default function Services() {
                         <article
                             key={service.id}
                             id={service.id}
-                            className={`bg-white rounded-2xl border-2 ${borderMap[service.color]} p-6 transition-all duration-200 hover:shadow-lg`}
+                            className={`bg-white rounded-2xl border-2 ${borderMap[service.color]} overflow-hidden transition-all duration-200 hover:shadow-lg`}
                         >
-                            <div
-                                className={`inline-flex items-center justify-center w-12 h-12 ${colorMap[service.color]} text-white rounded-xl mb-4`}
-                            >
-                                {service.icon}
-                            </div>
-                            <h3
-                                className={`text-xl font-bold text-gray-900 mb-2`}
-                            >
-                                Antalya {service.title}
-                            </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                {service.description}
-                            </p>
-                            <ul className="space-y-1.5">
-                                {service.items.map((item) => (
-                                    <li
-                                        key={item}
-                                        className="flex items-center gap-2 text-sm text-gray-700"
-                                    >
-                                        <svg
-                                            className={`w-4 h-4 ${textMap[service.color]} shrink-0`}
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            aria-hidden="true"
+                            {service.image && (
+                                <div className="relative w-full h-48">
+                                    <Image
+                                        src={service.image}
+                                        alt={`Antalya ${service.title}`}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    />
+                                </div>
+                            )}
+                            <div className="p-6">
+                                <div
+                                    className={`inline-flex items-center justify-center w-12 h-12 ${colorMap[service.color]} text-white rounded-xl mb-4`}
+                                >
+                                    {service.icon}
+                                </div>
+                                <h3
+                                    className={`text-xl font-bold text-gray-900 mb-2`}
+                                >
+                                    Antalya {service.title}
+                                </h3>
+                                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                    {service.description}
+                                </p>
+                                <ul className="space-y-1.5">
+                                    {service.items.map((item) => (
+                                        <li
+                                            key={item}
+                                            className="flex items-center gap-2 text-sm text-gray-700"
                                         >
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clipRule="evenodd"
-                                            />
-                                        </svg>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
+                                            <svg
+                                                className={`w-4 h-4 ${textMap[service.color]} shrink-0`}
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clipRule="evenodd"
+                                                />
+                                            </svg>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </article>
                     ))}
                 </div>

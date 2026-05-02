@@ -6,7 +6,7 @@ const faqItems = [
     {
         question: "Antalya'da klima tamiri ne kadar sürer?",
         answer:
-            "Çoğu klima arızası aynı gün içinde çözülmektedir. Sabah yapılan çağrılar genellikle öğleden önce veya öğleden sonra tamamlanır. Yedek parça gerektiren durumlarda parça temin süresine göre 1-2 gün içinde bitirilir.",
+            "Klima arızaları genellikle kısa sürede çözülmektedir. Sabah yapılan çağrılar genellikle öğleden önce veya öğleden sonra tamamlanır. Yedek parça gerektiren durumlarda parça temin süresine göre 1-2 gün içinde bitirilir.",
     },
     {
         question: "Klima bakımı ne zaman yapılmalıdır?",
@@ -128,8 +128,8 @@ export default function FAQ() {
                                 role="region"
                                 aria-labelledby={`faq-button-${index}`}
                                 className={`transition-all duration-200 ease-in-out ${openIndex === index
-                                        ? "max-h-96 opacity-100"
-                                        : "max-h-0 opacity-0 overflow-hidden"
+                                    ? "max-h-96 opacity-100"
+                                    : "max-h-0 opacity-0 overflow-hidden"
                                     }`}
                             >
                                 <p className="px-5 pb-5 text-gray-600 leading-relaxed">
