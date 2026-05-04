@@ -8,7 +8,7 @@ const inter = Inter({
     variable: "--font-sans",
 });
 
-const SITE_URL = "https://www.antalyaklimaservisi.com";
+const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
 const PHONE = "05426546113";
 const PHONE_DISPLAY = "0542 654 61 13";
 const ADDRESS = "Tahılpazarı Mahallesi 452 Sokak No:3, Muratpaşa, Antalya";

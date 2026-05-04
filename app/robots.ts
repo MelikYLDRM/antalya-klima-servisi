@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: "*",
             allow: "/",
         },
-        sitemap: "https://www.antalyaklimaservisi.com/sitemap.xml",
+        sitemap: "https://www.antalyaklimabeyazesyatamiri.com.tr/sitemap.xml",
     };
 }
