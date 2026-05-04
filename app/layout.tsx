@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -55,21 +55,21 @@ export const metadata: Metadata = {
             "Antalya Klima Tamiri | Muratpaşa Klima Montaj Bakım Servisi | 0542 654 61 13",
         description:
             "Antalya Muratpaşa'da profesyonel klima tamiri, montajı ve bakımı. Buzdolabı ve çamaşır makinesi tamiri.",
-        images: [
-            {
-                url: "/og-image.jpg",
-                width: 1200,
-                height: 630,
-                alt: "Antalya Klima Tamiri ve Beyaz Eşya Servisi",
-            },
-        ],
     },
     twitter: {
         card: "summary_large_image",
         title: "Antalya Klima Tamiri | 0542 654 61 13",
         description:
             "Antalya Muratpaşa'da profesyonel klima tamiri, montajı, bakımı. Buzdolabı ve çamaşır makinesi tamiri.",
-        images: ["/og-image.jpg"],
+    },
+    other: {
+        "geo.region": "TR-07",
+        "geo.placename": "Antalya, Muratpaşa",
+        "geo.position": "36.8969;30.7133",
+        ICBM: "36.8969, 30.7133",
+        "revisit-after": "7 days",
+        rating: "general",
+        language: "Turkish",
     },
     robots: {
         index: true,
@@ -82,6 +82,12 @@ export const metadata: Metadata = {
             "max-snippet": -1,
         },
     },
+};
+
+export const viewport: Viewport = {
+    themeColor: "#1d4ed8",
+    width: "device-width",
+    initialScale: 1,
 };
 
 // LocalBusiness JSON-LD Schema
@@ -171,6 +177,84 @@ const websiteSchema = {
     inLanguage: "tr-TR",
 };
 
+// BreadcrumbList Schema
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Ana Sayfa",
+            item: SITE_URL,
+        },
+    ],
+};
+
+// Service Schemas
+const serviceSchemas = [
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${SITE_URL}/#service-klima-tamiri`,
+        name: "Klima Tamiri",
+        description:
+            "Antalya Muratpaşa'da tüm marka ve model klimalar için profesyonel arıza tespiti ve tamir hizmeti.",
+        provider: { "@id": `${SITE_URL}/#business` },
+        areaServed: { "@type": "City", name: "Antalya" },
+        serviceType: "Klima Tamiri",
+        url: SITE_URL,
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${SITE_URL}/#service-klima-montaji`,
+        name: "Klima Montajı",
+        description:
+            "Split, inverter ve kaset tipi klimaların Antalya'da profesyonel montaj hizmeti.",
+        provider: { "@id": `${SITE_URL}/#business` },
+        areaServed: { "@type": "City", name: "Antalya" },
+        serviceType: "Klima Montajı",
+        url: SITE_URL,
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${SITE_URL}/#service-klima-bakimi`,
+        name: "Klima Bakımı",
+        description:
+            "Yıllık periyodik klima bakımı, filtre temizliği, gaz seviyesi kontrolü ve sezon öncesi hazırlık.",
+        provider: { "@id": `${SITE_URL}/#business` },
+        areaServed: { "@type": "City", name: "Antalya" },
+        serviceType: "Klima Bakımı",
+        url: SITE_URL,
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${SITE_URL}/#service-buzdolabi-tamiri`,
+        name: "Buzdolabı Tamiri",
+        description:
+            "Antalya'da yerinde buzdolabı tamiri. Soğutma problemi, kompresör, dondurucu arızaları.",
+        provider: { "@id": `${SITE_URL}/#business` },
+        areaServed: { "@type": "City", name: "Antalya" },
+        serviceType: "Buzdolabı Tamiri",
+        url: SITE_URL,
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${SITE_URL}/#service-camasir-makinesi-tamiri`,
+        name: "Çamaşır Makinesi Tamiri",
+        description:
+            "Antalya'da yerinde çamaşır makinesi tamiri. Su almıyor, sıkıyor, dönmüyor sorunları.",
+        provider: { "@id": `${SITE_URL}/#business` },
+        areaServed: { "@type": "City", name: "Antalya" },
+        serviceType: "Çamaşır Makinesi Tamiri",
+        url: SITE_URL,
+    },
+];
+
 export default function RootLayout({
     children,
 }: {
@@ -197,6 +281,21 @@ export default function RootLayout({
                         __html: JSON.stringify(websiteSchema),
                     }}
                 />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(breadcrumbSchema),
+                    }}
+                />
+                {serviceSchemas.map((schema) => (
+                    <script
+                        key={schema["@id"]}
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify(schema),
+                        }}
+                    />
+                ))}
             </head>
             <body className="antialiased">{children}</body>
         </html>
