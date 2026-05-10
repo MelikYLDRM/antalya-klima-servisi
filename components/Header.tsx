@@ -11,11 +11,12 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const navLinks = [
-        { href: "#hizmetler", label: "Hizmetler" },
-        { href: "#neden-biz", label: "Neden Biz" },
-        { href: "#bolgeler", label: "Hizmet Bölgeleri" },
-        { href: "#sss", label: "S.S.S." },
-        { href: "#iletisim", label: "İletişim" },
+        { href: "/#hizmetler", label: "Hizmetler" },
+        { href: "/#neden-biz", label: "Neden Biz" },
+        { href: "/#bolgeler", label: "Hizmet Bölgeleri" },
+        { href: "/#sss", label: "S.S.S." },
+        { href: "/rehber", label: "Rehber" },
+        { href: "/#iletisim", label: "İletişim" },
     ];
 
     return (

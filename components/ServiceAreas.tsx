@@ -1,14 +1,17 @@
+import Link from "next/link";
+
 const areas = [
     {
         name: "Muratpaşa",
+        slug: "muratpasa",
         description: "Tahılpazarı, Kışla, Sinan, Fener, Şirinyalı, Lara",
         primary: true,
     },
-    { name: "Kepez", description: "Altınova, Gürsu, Varsak, Santral Mahallesi" },
-    { name: "Konyaaltı", description: "Uncalı, Sarısu, Hurma, Liman Mahallesi" },
-    { name: "Döşemealtı", description: "Çıplaklı, Hacilar, Işıklar" },
-    { name: "Antalya Merkez", description: "Tüm merkez mahalleler" },
-    { name: "Aksu", description: "Düden, Çandır, Serik yolu" },
+    { name: "Kepez", slug: "kepez", description: "Altınova, Gürsu, Varsak, Santral Mahallesi" },
+    { name: "Konyaaltı", slug: "konyaalti", description: "Uncalı, Sarısu, Hurma, Liman Mahallesi" },
+    { name: "Döşemealtı", slug: "dosemealti", description: "Çıplaklı, Hacilar, Işıklar" },
+    { name: "Antalya Merkez", slug: "muratpasa", description: "Tüm merkez mahalleler" },
+    { name: "Aksu", slug: "aksu", description: "Düden, Çandır, Serik yolu" },
 ];
 
 export default function ServiceAreas() {
@@ -38,11 +41,12 @@ export default function ServiceAreas() {
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
                     {areas.map((area) => (
-                        <div
+                        <Link
                             key={area.name}
-                            className={`rounded-xl p-4 text-center ${area.primary
-                                    ? "bg-blue-500 border-2 border-blue-300"
-                                    : "bg-blue-800/60 border border-blue-700"
+                            href={`/hizmet-bolgesi/${area.slug}`}
+                            className={`rounded-xl p-4 text-center transition-opacity hover:opacity-90 ${area.primary
+                                ? "bg-blue-500 border-2 border-blue-300"
+                                : "bg-blue-800/60 border border-blue-700"
                                 }`}
                         >
                             {area.primary && (
@@ -54,7 +58,7 @@ export default function ServiceAreas() {
                             <p className="text-xs text-blue-200 leading-snug">
                                 {area.description}
                             </p>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 

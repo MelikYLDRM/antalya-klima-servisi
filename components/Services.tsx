@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const PHONE = "05426546113";
 const PHONE_DISPLAY = "0542 654 61 13";
@@ -165,7 +166,7 @@ export default function Services() {
                                 <div className="relative w-full h-48">
                                     <Image
                                         src={service.image}
-                                        alt={`Antalya ${service.title}`}
+                                        alt={`Antalya ${service.title} — profesyonel servis hizmeti`}
                                         fill
                                         className="object-cover"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -186,7 +187,7 @@ export default function Services() {
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                     {service.description}
                                 </p>
-                                <ul className="space-y-1.5">
+                                <ul className="space-y-1.5 mb-5">
                                     {service.items.map((item) => (
                                         <li
                                             key={item}
@@ -208,6 +209,12 @@ export default function Services() {
                                         </li>
                                     ))}
                                 </ul>
+                                <Link
+                                    href={`/hizmetler/${service.id}`}
+                                    className={`inline-flex items-center gap-1 text-sm font-semibold ${textMap[service.color]} hover:underline`}
+                                >
+                                    Detaylı Bilgi →
+                                </Link>
                             </div>
                         </article>
                     ))}

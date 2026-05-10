@@ -38,6 +38,46 @@ const faqItems = [
         answer:
             "Hayır, keşif ücreti almıyoruz. Teknisyenimiz adresinize gelir, cihazı inceler ve tamir fiyatını bildirir. Tamir için onay vermeniz durumunda işe başlanır. Tamir yapılmaması durumunda herhangi bir ücret talep edilmez.",
     },
+    {
+        question: "Klima tamiri için garanti veriyor musunuz?",
+        answer:
+            "Evet, gerçekleştirdiğimiz tamirlerde işçilik garantisi sunuyoruz. Değiştirilen orijinal yedek parçalar için üretici garantisi geçerlidir. Tamir sonrası aynı arıza tekrarlanırsa ücretsiz müdahale yapıyoruz.",
+    },
+    {
+        question: "Klima montajında kaç kişi gelir ve ne kadar sürer?",
+        answer:
+            "Standart split klima montajı 2-3 saat sürer, genellikle 2 teknisyen ile yapılır. Kaset tipi veya multi-split sistemlerde süre uzayabilir. Montaj öncesi sizi bilgilendiriyoruz.",
+    },
+    {
+        question: "Çamaşır makinesi hata kodu veriyorsa ne yapmalıyım?",
+        answer:
+            "Hata kodu çoğunlukla bir sensör, elektronik kart veya mekanik parça arızasını işaret eder. Cihazı kapatıp birkaç dakika bekledikten sonra yeniden başlatın; hata devam ediyorsa teknisyen çağırın. Hata kodunu not alarak bizi aradığınızda teşhisi hızlandırabilirsiniz.",
+    },
+    {
+        question: "Klima neden su akıtır?",
+        answer:
+            "Klimanın su akıtmasının en yaygın nedeni drenaj borusunun tıkanması veya yanlış eğimli kurulmasıdır. Bunun dışında filtre kirliliği ve gaz eksikliği de su birikmesine yol açabilir. Teknisyenimiz sorunu yerinde teşhis edip çözer.",
+    },
+    {
+        question: "Buzdolabı soğutmuyorsa ne yapmalıyım?",
+        answer:
+            "Önce arka ızgaranın ve kapı contasının temiz ve sağlam olduğunu kontrol edin. Termostat ayarını kontrol edin. Kompresör sesinin gelip gelmediğine bakın. Bunlar sorun değilse gaz kaçağı veya kompresör arızası olabilir; servis çağırmanız gerekir.",
+    },
+    {
+        question: "Klima kokuyor, ne yapabilirim?",
+        answer:
+            "Klima kokusu genellikle kirli filtre veya iç ünitede küf oluşumundan kaynaklanır. Filtreyi temizleyin; koku devam ederse iç ünite derinlemesine temizliği için servis çağırın. Düzenli bakım bu problemi önler.",
+    },
+    {
+        question: "Klima inverter mi yoksa on/off mı almalıyım?",
+        answer:
+            "İnverter klimalar yüzde 30-50 daha az enerji tüketir ve uzun süre çalışacak mekânlar için idealdir. On/off klimalar başlangıç maliyeti düşük olmakla birlikte enerji faturanıza daha fazla yansır. Kullanım sıklığınıza göre öneri için bizi arayabilirsiniz.",
+    },
+    {
+        question: "Antalya'da acil klima tamiri için ne kadar beklerim?",
+        answer:
+            "Çalışma saatlerimiz içinde (Pazartesi–Cumartesi 09:30–19:00) yaptığınız başvurularda aynı gün servis vermeye çalışıyoruz. Yoğun sezonlarda sabah erken aranmanızı öneririz. Pazar günleri acil çağrılar alınır.",
+    },
 ];
 
 // FAQ Schema - will be injected via script tag in page

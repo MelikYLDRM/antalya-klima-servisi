@@ -3,14 +3,20 @@ const PHONE_DISPLAY = "0542 654 61 13";
 const WA_LINK = `https://wa.me/90${PHONE.slice(1)}?text=Merhaba,%20klima%20servisi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`;
 
 const services = [
-    "Antalya Klima Tamiri",
-    "Klima Montajı",
-    "Klima Bakımı",
-    "Buzdolabı Tamiri",
-    "Çamaşır Makinesi Tamiri",
+    { label: "Antalya Klima Tamiri", href: "/hizmetler/klima-tamiri" },
+    { label: "Klima Montajı", href: "/hizmetler/klima-montaji" },
+    { label: "Klima Bakımı", href: "/hizmetler/klima-bakimi" },
+    { label: "Buzdolabı Tamiri", href: "/hizmetler/buzdolabi-tamiri" },
+    { label: "Çamaşır Makinesi Tamiri", href: "/hizmetler/camasir-makinesi-tamiri" },
 ];
 
-const areas = ["Muratpaşa", "Kepez", "Konyaaltı", "Döşemealtı", "Antalya Merkez"];
+const areas = [
+    { label: "Muratpaşa", href: "/hizmet-bolgesi/muratpasa" },
+    { label: "Kepez", href: "/hizmet-bolgesi/kepez" },
+    { label: "Konyaaltı", href: "/hizmet-bolgesi/konyaalti" },
+    { label: "Döşemealtı", href: "/hizmet-bolgesi/dosemealti" },
+    { label: "Aksu", href: "/hizmet-bolgesi/aksu" },
+];
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -139,12 +145,12 @@ export default function Footer() {
                         </h3>
                         <ul className="space-y-2">
                             {services.map((s) => (
-                                <li key={s}>
+                                <li key={s.href}>
                                     <a
-                                        href="#hizmetler"
+                                        href={s.href}
                                         className="text-sm text-gray-400 hover:text-blue-400 transition-colors"
                                     >
-                                        {s}
+                                        {s.label}
                                     </a>
                                 </li>
                             ))}
@@ -158,12 +164,12 @@ export default function Footer() {
                         </h3>
                         <ul className="space-y-2">
                             {areas.map((a) => (
-                                <li key={a}>
+                                <li key={a.href}>
                                     <a
-                                        href="#bolgeler"
+                                        href={a.href}
                                         className="text-sm text-gray-400 hover:text-blue-400 transition-colors"
                                     >
-                                        {a} Klima Servisi
+                                        {a.label} Klima Servisi
                                     </a>
                                 </li>
                             ))}
