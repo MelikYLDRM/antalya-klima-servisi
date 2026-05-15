@@ -9,7 +9,7 @@ type SitemapEntry = {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const updatedAt = new Date("2026-05-15");
+    const updatedAt = new Date("2026-05-16");
 
     const routes: SitemapEntry[] = [
         { path: "/", priority: 1, changeFrequency: "weekly" },
@@ -18,11 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { path: "/hizmetler/klima-montaji", priority: 0.92, changeFrequency: "monthly" },
         { path: "/hizmetler/buzdolabi-tamiri", priority: 0.9, changeFrequency: "monthly" },
         { path: "/hizmetler/camasir-makinesi-tamiri", priority: 0.9, changeFrequency: "monthly" },
-        { path: "/hizmet-bolgesi/muratpasa", priority: 0.86, changeFrequency: "monthly" },
-        { path: "/hizmet-bolgesi/kepez", priority: 0.84, changeFrequency: "monthly" },
-        { path: "/hizmet-bolgesi/konyaalti", priority: 0.84, changeFrequency: "monthly" },
-        { path: "/hizmet-bolgesi/dosemealti", priority: 0.82, changeFrequency: "monthly" },
-        { path: "/hizmet-bolgesi/aksu", priority: 0.82, changeFrequency: "monthly" },
+        { path: "/hizmet-bolgesi/muratpasa", priority: 0.9, changeFrequency: "weekly" },
+        { path: "/hizmet-bolgesi/kepez", priority: 0.88, changeFrequency: "weekly" },
+        { path: "/hizmet-bolgesi/konyaalti", priority: 0.88, changeFrequency: "weekly" },
+        { path: "/hizmet-bolgesi/dosemealti", priority: 0.86, changeFrequency: "weekly" },
+        { path: "/hizmet-bolgesi/aksu", priority: 0.86, changeFrequency: "weekly" },
         { path: "/rehber", priority: 0.8, changeFrequency: "weekly" },
         {
             path: "/rehber/klima-bakimi-ne-zaman-yapilir",

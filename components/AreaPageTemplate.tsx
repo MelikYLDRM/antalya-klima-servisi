@@ -11,6 +11,11 @@ export interface AreaService {
     description: string;
 }
 
+export interface AreaFaq {
+    q: string;
+    a: string;
+}
+
 export interface AreaPageProps {
     areaName: string;
     slug: string;
@@ -20,6 +25,8 @@ export interface AreaPageProps {
     services: AreaService[];
     distanceNote: string;
     specialNote?: string;
+    faqs?: AreaFaq[];
+    whyUsNote?: string;
 }
 
 export default function AreaPageTemplate({
@@ -31,12 +38,27 @@ export default function AreaPageTemplate({
     services,
     distanceNote,
     specialNote,
+    faqs,
+    whyUsNote,
 }: AreaPageProps) {
     const breadcrumbSchema = buildBreadcrumbSchema([
         { name: "Ana Sayfa", path: "/" },
         { name: "Hizmet Bölgeleri", path: "/#bolgeler" },
-        { name: `${areaName} Klima Servisi`, path: `/hizmet-bolgesi/${slug}` },
+        { name: `${areaName} Klima Tamiri ve Servisi`, path: `/hizmet-bolgesi/${slug}` },
     ]);
+
+    const faqSchema = faqs && faqs.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map(({ q, a }) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: a,
+            },
+        })),
+    } : null;
 
     const localBusinessSchema = {
         "@context": "https://schema.org",
@@ -87,6 +109,7 @@ export default function AreaPageTemplate({
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+            {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
 
             <Header />
             <main>
@@ -106,7 +129,7 @@ export default function AreaPageTemplate({
 
                         <div className="max-w-3xl">
                             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-5">
-                                <span className="text-blue-300">{areaName}</span> Klima Servisi
+                                <span className="text-blue-300">{areaName}</span> Klima Tamiri, Bakım ve Servis
                             </h1>
                             <p className="text-blue-100 text-lg leading-relaxed mb-6">{introText}</p>
                             <p className="text-blue-200 text-sm mb-8">{distanceNote}</p>
@@ -186,6 +209,68 @@ export default function AreaPageTemplate({
                         </div>
                     </div>
                 </section>
+
+                {/* Why Us */}
+                <section className="py-12 bg-white">
+                    <div className="max-w-5xl mx-auto px-4 sm:px-6">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                            {areaName}&apos;da Neden Bizi Seçmelisiniz?
+                        </h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div className="bg-blue-50 rounded-2xl p-5 border border-blue-100">
+                                <div className="text-blue-700 font-bold text-lg mb-2">Aynı Gün Servis</div>
+                                <p className="text-gray-700 text-sm">Sabah aradığınızda çoğunlukla aynı gün {areaName}&apos;da adresinize geliyoruz. Bekletmeden, hızlı çözüm.</p>
+                            </div>
+                            <div className="bg-blue-50 rounded-2xl p-5 border border-blue-100">
+                                <div className="text-blue-700 font-bold text-lg mb-2">Ücretsiz Keşif</div>
+                                <p className="text-gray-700 text-sm">Teknisyenimiz {areaName}&apos;daki adresinize gelir, arızayı inceler ve net fiyat verir. Onay vermeden hiçbir ücret alınmaz.</p>
+                            </div>
+                            <div className="bg-blue-50 rounded-2xl p-5 border border-blue-100">
+                                <div className="text-blue-700 font-bold text-lg mb-2">İşçilik Garantisi</div>
+                                <p className="text-gray-700 text-sm">Gerçekleştirdiğimiz tüm tamir ve montaj işlemlerinde işçilik garantisi veriyoruz. Sorun tekrarlarsa ücretsiz geliyoruz.</p>
+                            </div>
+                            <div className="bg-blue-50 rounded-2xl p-5 border border-blue-100">
+                                <div className="text-blue-700 font-bold text-lg mb-2">Tüm Markalar</div>
+                                <p className="text-gray-700 text-sm">Daikin, Mitsubishi, Samsung, LG, Bosch, Arçelik, Vestel, Baymak, Alarko, Gree ve daha fazlası — marka fark etmez.</p>
+                            </div>
+                            <div className="bg-blue-50 rounded-2xl p-5 border border-blue-100">
+                                <div className="text-blue-700 font-bold text-lg mb-2">Net Fiyat</div>
+                                <p className="text-gray-700 text-sm">İş başlamadan kesin fiyat bildiriyoruz. Sürpriz ücret yok, gizli maliyet yok.</p>
+                            </div>
+                            <div className="bg-blue-50 rounded-2xl p-5 border border-blue-100">
+                                <div className="text-blue-700 font-bold text-lg mb-2">Deneyimli Ekip</div>
+                                <p className="text-gray-700 text-sm">10 yılı aşkın tecrübeli teknisyenlerimiz {areaName} bölgesini iyi tanır; her türlü arızada hızlı ve kalıcı çözüm sunar.</p>
+                            </div>
+                        </div>
+                        {whyUsNote && (
+                            <div className="mt-6 bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-yellow-800 text-sm font-medium">
+                                {whyUsNote}
+                            </div>
+                        )}
+                    </div>
+                </section>
+
+                {/* FAQ */}
+                {faqs && faqs.length > 0 && (
+                    <section className="py-12 bg-gray-50">
+                        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+                                {areaName} Klima Servisi — Sık Sorulan Sorular
+                            </h2>
+                            <div className="space-y-4">
+                                {faqs.map(({ q, a }, i) => (
+                                    <details key={i} className="bg-white rounded-2xl border border-gray-200 p-5 group">
+                                        <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                                            <span>{q}</span>
+                                            <span className="ml-4 text-blue-600 text-xl leading-none select-none">+</span>
+                                        </summary>
+                                        <p className="mt-3 text-gray-600 text-sm leading-relaxed">{a}</p>
+                                    </details>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
 
                 {/* CTA */}
                 <section className="bg-blue-700 py-12">
