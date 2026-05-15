@@ -117,7 +117,7 @@ export default function FAQ() {
                         id="faq-heading"
                         className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4"
                     >
-                        Klima Servisi Hakkında Her Şey
+                        Klima Tamir, Bakım ve Servis Hakkında Her Şey
                     </h2>
                     <p className="text-gray-600 text-lg">
                         Müşterilerimizin en çok merak ettiği sorular ve cevapları.

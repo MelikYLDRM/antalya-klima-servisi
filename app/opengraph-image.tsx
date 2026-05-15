@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 export const alt =
-    "Antalya Klima Tamiri, Montajı ve Bakımı — 0542 654 61 13";
+    "Antalya Klima Tamir, Bakım ve Servis — 0542 654 61 13";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -51,7 +51,7 @@ export default function Image() {
                         margin: "0 0 12px 0",
                     }}
                 >
-                    Klima Tamiri,
+                    Klima Tamir,
                 </div>
                 <div
                     style={{
@@ -62,7 +62,7 @@ export default function Image() {
                         margin: "0 0 28px 0",
                     }}
                 >
-                    Montaji &amp; Bakimi
+                    Bakim &amp; Servis
                 </div>
 
                 {/* Alt başlık */}

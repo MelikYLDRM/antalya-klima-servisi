@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Antalya Buzdolabı Tamiri | Yerinde Hızlı Servis | 0542 654 61 13",
-    description: "Antalya'da buzdolabı tamiri: soğutmuyor, buz yapıyor, su akıtıyor, motor sesi çıkarıyor? Yerinde aynı gün servis, ücretsiz keşif. 0542 654 61 13",
-    alternates: { canonical: `${SITE_URL}/hizmetler/buzdolabi-tamiri` },
-    openGraph: {
-        title: "Antalya Buzdolabı Tamiri | Yerinde Hızlı Servis",
-        description: "Antalya'da buzdolabı tamiri. Soğutmuyor, buz yapıyor, su akıtıyor? Aynı gün yerinde servis. 0542 654 61 13",
-        url: `${SITE_URL}/hizmetler/buzdolabi-tamiri`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Antalya Buzdolabı Tamir ve Servis | Yerinde Hızlı Destek | 0542 654 61 13",
+    description: "Antalya'da buzdolabı tamir ve servis hizmeti: soğutmuyor, buz yapıyor, su akıtıyor sorunlarında yerinde aynı gün destek ve ücretsiz keşif.",
+    path: "/hizmetler/buzdolabi-tamiri",
+    keywords: ["antalya buzdolabı tamiri", "buzdolabı servis antalya", "yerinde beyaz eşya servisi"],
+});
 
 export default function BuzdolabiTamiriPage() {
     return (

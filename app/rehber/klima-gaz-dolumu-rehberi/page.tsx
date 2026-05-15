@@ -3,26 +3,29 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import {
+    OG_IMAGE_PATH,
+    SITE_URL,
+    buildBreadcrumbSchema,
+    buildPageMetadata,
+    getAbsoluteUrl,
+} from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
 const PHONE = "05426546113";
 const PHONE_DISPLAY = "0542 654 61 13";
 const WHATSAPP = "https://wa.me/905426546113";
 const PUBLISHED = "2025-01-15";
+const MODIFIED = "2026-05-15";
+const PAGE_PATH = "/rehber/klima-gaz-dolumu-rehberi";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
     title: "Klima Gaz Dolumu: Bilmeniz Gerekenler | Antalya Klima Servisi",
-    description: "R32, R410A ve R22 gazları arasındaki fark, gaz kaçağı belirtileri, dolum süreci ve fiyatları hakkında kapsamlı rehber. Antalya klima gaz dolumu için hemen arayın.",
-    alternates: { canonical: `${SITE_URL}/rehber/klima-gaz-dolumu-rehberi` },
-    openGraph: {
-        type: "article",
-        title: "Klima Gaz Dolumu: Bilmeniz Gerekenler",
-        description: "R32, R410A ve R22 gazları arasındaki fark, gaz kaçağı belirtileri ve dolum süreci hakkında kapsamlı rehber.",
-        url: `${SITE_URL}/rehber/klima-gaz-dolumu-rehberi`,
-        publishedTime: PUBLISHED,
-        authors: ["Antalya Klima Servisi"],
-    },
-};
+    description: "R32, R410A ve R22 gaz farkları, gaz kaçağı belirtileri ve dolum süreci hakkında kapsamlı rehber.",
+    path: PAGE_PATH,
+    type: "article",
+    publishedTime: PUBLISHED,
+    modifiedTime: MODIFIED,
+});
 
 const jsonLdArticle = {
     "@context": "https://schema.org",
@@ -30,20 +33,30 @@ const jsonLdArticle = {
     headline: "Klima Gaz Dolumu: Bilmeniz Gerekenler",
     description: "R32, R410A ve R22 gazları arasındaki fark, gaz kaçağı belirtileri, dolum süreci ve fiyatları hakkında kapsamlı rehber.",
     datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    image: getAbsoluteUrl(OG_IMAGE_PATH),
+    inLanguage: "tr-TR",
+    articleSection: "Klima Servisi",
+    keywords: ["klima gaz dolumu", "antalya klima servisi", "r32 r410a"],
+    mainEntityOfPage: getAbsoluteUrl(PAGE_PATH),
     author: { "@type": "Organization", name: "Antalya Klima Servisi" },
-    publisher: { "@type": "Organization", name: "Antalya Klima Servisi", url: SITE_URL },
-    url: `${SITE_URL}/rehber/klima-gaz-dolumu-rehberi`,
+    publisher: {
+        "@type": "Organization",
+        name: "Antalya Klima Servisi",
+        url: SITE_URL,
+        logo: {
+            "@type": "ImageObject",
+            url: getAbsoluteUrl(OG_IMAGE_PATH),
+        },
+    },
+    url: getAbsoluteUrl(PAGE_PATH),
 };
 
-const jsonLdBreadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Rehber", item: `${SITE_URL}/rehber` },
-        { "@type": "ListItem", position: 3, name: "Klima Gaz Dolumu: Bilmeniz Gerekenler", item: `${SITE_URL}/rehber/klima-gaz-dolumu-rehberi` },
-    ],
-};
+const jsonLdBreadcrumb = buildBreadcrumbSchema([
+    { name: "Ana Sayfa", path: "/" },
+    { name: "Rehber", path: "/rehber" },
+    { name: "Klima Gaz Dolumu: Bilmeniz Gerekenler", path: PAGE_PATH },
+]);
 
 export default function KlimaGazDolumuPage() {
     return (

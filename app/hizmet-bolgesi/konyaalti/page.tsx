@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import AreaPageTemplate from "@/components/AreaPageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Konyaaltı Klima Servisi | Antalya Klima Tamiri — 0542 654 61 13",
-    description: "Konyaaltı'nda klima tamiri, montajı ve bakımı. Uncalı, Sarısu, Hurma, Liman mahallelerinde aynı gün servis.",
-    alternates: { canonical: `${SITE_URL}/hizmet-bolgesi/konyaalti` },
-    openGraph: {
-        title: "Konyaaltı Klima Servisi",
-        description: "Konyaaltı'nda klima tamiri, montajı ve bakımı. Aynı gün servis.",
-        url: `${SITE_URL}/hizmet-bolgesi/konyaalti`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Konyaaltı Klima Tamir, Bakım ve Servis | Antalya | 0542 654 61 13",
+    description: "Konyaaltı'nda klima tamir, bakım ve servis hizmeti. Uncalı, Sarısu, Hurma ve Liman mahallelerinde aynı gün uzman ekip desteği.",
+    path: "/hizmet-bolgesi/konyaalti",
+});
 
 export default function KonyaaltiPage() {
     return (

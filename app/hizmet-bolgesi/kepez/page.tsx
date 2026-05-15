@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import AreaPageTemplate from "@/components/AreaPageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Kepez Klima Servisi | Antalya Klima Tamiri — 0542 654 61 13",
-    description: "Kepez'de klima tamiri, montajı ve bakımı. Altınova, Gürsu, Varsak, Santral mahallelerinde aynı gün servis.",
-    alternates: { canonical: `${SITE_URL}/hizmet-bolgesi/kepez` },
-    openGraph: {
-        title: "Kepez Klima Servisi",
-        description: "Kepez'de klima tamiri, montajı ve bakımı. Aynı gün servis.",
-        url: `${SITE_URL}/hizmet-bolgesi/kepez`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Kepez Klima Tamir, Bakım ve Servis | Antalya | 0542 654 61 13",
+    description: "Kepez'de klima tamir, bakım ve servis hizmeti. Altınova, Gürsu, Varsak ve Santral başta olmak üzere ilçede aynı gün servis desteği.",
+    path: "/hizmet-bolgesi/kepez",
+});
 
 export default function KepezPage() {
     return (

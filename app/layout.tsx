@@ -1,6 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import {
+    BRAND_NAME,
+    OG_IMAGE_PATH,
+    PHONE,
+    SITE_URL,
+    buildBreadcrumbSchema,
+    getAbsoluteUrl,
+} from "@/utils/seo";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -8,36 +16,36 @@ const inter = Inter({
     variable: "--font-sans",
 });
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-const PHONE = "05426546113";
-const PHONE_DISPLAY = "0542 654 61 13";
-const ADDRESS = "Tahılpazarı Mahallesi 452 Sokak No:3, Muratpaşa, Antalya";
-
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
     title: {
         default:
-            "Antalya Klima Tamiri | Muratpaşa Klima Montaj Bakım Servisi | 0542 654 61 13",
+            "Antalya Klima Tamir, Bakım ve Servis | Muratpaşa Klima Montajı | 0542 654 61 13",
         template: "%s | Antalya Klima Servisi",
     },
     description:
-        "Antalya Muratpaşa'da profesyonel klima tamiri, montajı ve bakımı. Buzdolabı ve çamaşır makinesi tamiri. Hemen arayın: 0542 654 61 13",
+        "Antalya Muratpaşa'da profesyonel klima tamir, bakım ve servis hizmetleri. Klima montajı, buzdolabı ve çamaşır makinesi servis çözümleri için hemen arayın: 0542 654 61 13",
     keywords: [
+        "antalya klima tamir bakım servis",
         "antalya klima tamiri",
+        "antalya klima bakımı",
         "antalya klima servisi",
         "muratpaşa klima tamiri",
+        "muratpaşa klima bakımı",
         "antalya klima montajı",
         "klima bakımı antalya",
         "antalya buzdolabı tamiri",
+        "antalya buzdolabı servis",
         "antalya çamaşır makinesi tamiri",
         "antalya beyaz eşya tamiri",
-        "antalya klima arıza",
+        "antalya beyaz eşya servis",
+        "antalya klima arıza servis",
         "antalya klima servisi muratpaşa",
         "tahılpazarı klima servisi",
     ],
-    authors: [{ name: "Antalya Klima Beyaz Eşya Servis" }],
-    creator: "Antalya Klima Beyaz Eşya Servis",
-    publisher: "Antalya Klima Beyaz Eşya Servis",
+    authors: [{ name: BRAND_NAME }],
+    creator: BRAND_NAME,
+    publisher: BRAND_NAME,
     formatDetection: {
         email: false,
         address: false,
@@ -50,17 +58,26 @@ export const metadata: Metadata = {
         type: "website",
         locale: "tr_TR",
         url: SITE_URL,
-        siteName: "Antalya Klima Beyaz Eşya Servis",
+        siteName: BRAND_NAME,
         title:
-            "Antalya Klima Tamiri | Muratpaşa Klima Montaj Bakım Servisi | 0542 654 61 13",
+            "Antalya Klima Tamir, Bakım ve Servis | Muratpaşa Klima Montajı | 0542 654 61 13",
         description:
-            "Antalya Muratpaşa'da profesyonel klima tamiri, montajı ve bakımı. Buzdolabı ve çamaşır makinesi tamiri.",
+            "Antalya Muratpaşa'da profesyonel klima tamir, bakım ve servis hizmetleri. Klima montajı ve beyaz eşya servis desteği.",
+        images: [
+            {
+                url: getAbsoluteUrl(OG_IMAGE_PATH),
+                width: 1200,
+                height: 630,
+                alt: "Antalya Klima Tamir, Bakım ve Servis",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Antalya Klima Tamiri | 0542 654 61 13",
+        title: "Antalya Klima Tamir, Bakım ve Servis | 0542 654 61 13",
         description:
-            "Antalya Muratpaşa'da profesyonel klima tamiri, montajı, bakımı. Buzdolabı ve çamaşır makinesi tamiri.",
+            "Antalya Muratpaşa'da profesyonel klima tamir, bakım ve servis. Buzdolabı ve çamaşır makinesi servis çözümleri.",
+        images: [getAbsoluteUrl(OG_IMAGE_PATH)],
     },
     other: {
         "geo.region": "TR-07",
@@ -95,10 +112,12 @@ const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "@id": `${SITE_URL}/#business`,
-    name: "Antalya Klima Beyaz Eşya Tamir Servisi",
-    alternateName: "Antalya Klima Servisi",
+    name: BRAND_NAME,
+    alternateName: "Antalya Klima Tamir Bakım Servisi",
     url: SITE_URL,
     telephone: `+90${PHONE.slice(1)}`,
+    image: getAbsoluteUrl(OG_IMAGE_PATH),
+    logo: getAbsoluteUrl(OG_IMAGE_PATH),
     address: {
         "@type": "PostalAddress",
         streetAddress: "Tahılpazarı Mahallesi 452 Sokak No:3",
@@ -139,11 +158,12 @@ const localBusinessSchema = {
         { "@type": "AdministrativeArea", name: "Döşemealtı" },
     ],
     serviceType: [
-        "Klima Tamiri",
+        "Klima Tamir Hizmeti",
+        "Klima Bakım Hizmeti",
+        "Klima Servis Hizmeti",
         "Klima Montajı",
-        "Klima Bakımı",
-        "Buzdolabı Tamiri",
-        "Çamaşır Makinesi Tamiri",
+        "Buzdolabı Tamir ve Servis",
+        "Çamaşır Makinesi Tamir ve Servis",
     ],
     knowsAbout: [
         "Klima Arıza Tespiti",
@@ -165,31 +185,37 @@ const localBusinessSchema = {
     },
 };
 
-// Website Schema
+const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: BRAND_NAME,
+    url: SITE_URL,
+    logo: getAbsoluteUrl(OG_IMAGE_PATH),
+    telephone: `+90${PHONE.slice(1)}`,
+    address: localBusinessSchema.address,
+    sameAs: localBusinessSchema.sameAs,
+    contactPoint: localBusinessSchema.contactPoint,
+};
+
 const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
-    name: "Antalya Klima Beyaz Eşya Tamir Servisi",
+    name: BRAND_NAME,
     description:
-        "Antalya Muratpaşa'da klima tamiri, montajı, bakımı ve beyaz eşya tamir servisi",
+        "Antalya Muratpaşa'da klima tamir, bakım ve servis hizmetleri ile beyaz eşya servis çözümleri",
     inLanguage: "tr-TR",
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    potentialAction: {
+        "@type": "SearchAction",
+        target: `${SITE_URL}/rehber?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+    },
 };
 
-// BreadcrumbList Schema
-const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-        {
-            "@type": "ListItem",
-            position: 1,
-            name: "Ana Sayfa",
-            item: SITE_URL,
-        },
-    ],
-};
+const breadcrumbSchema = buildBreadcrumbSchema([{ name: "Ana Sayfa", path: "/" }]);
 
 // Service Schemas
 const serviceSchemas = [
@@ -197,12 +223,12 @@ const serviceSchemas = [
         "@context": "https://schema.org",
         "@type": "Service",
         "@id": `${SITE_URL}/#service-klima-tamiri`,
-        name: "Klima Tamiri",
+        name: "Klima Tamir, Bakım ve Servis",
         description:
-            "Antalya Muratpaşa'da tüm marka ve model klimalar için profesyonel arıza tespiti ve tamir hizmeti.",
+            "Antalya Muratpaşa'da tüm marka ve model klimalar için profesyonel tamir, bakım ve servis hizmeti.",
         provider: { "@id": `${SITE_URL}/#business` },
         areaServed: { "@type": "City", name: "Antalya" },
-        serviceType: "Klima Tamiri",
+        serviceType: "Klima Tamir Bakım Servis",
         url: SITE_URL,
     },
     {
@@ -273,6 +299,12 @@ export default function RootLayout({
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(localBusinessSchema),
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(organizationSchema),
                     }}
                 />
                 <script

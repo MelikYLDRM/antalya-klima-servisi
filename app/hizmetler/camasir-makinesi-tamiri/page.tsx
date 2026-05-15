@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Antalya Çamaşır Makinesi Tamiri | Hata Kodu ve Arıza | 0542 654 61 13",
-    description: "Antalya'da çamaşır makinesi tamiri: çalışmıyor, su sızdırıyor, hata kodu veriyor, sıkmıyor? Yerinde aynı gün servis, ücretsiz keşif. 0542 654 61 13",
-    alternates: { canonical: `${SITE_URL}/hizmetler/camasir-makinesi-tamiri` },
-    openGraph: {
-        title: "Antalya Çamaşır Makinesi Tamiri | Hata Kodu ve Arıza",
-        description: "Antalya'da çamaşır makinesi tamiri. Hata kodu, su sızıntısı, sıkmıyor? Yerinde aynı gün servis. 0542 654 61 13",
-        url: `${SITE_URL}/hizmetler/camasir-makinesi-tamiri`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Antalya Çamaşır Makinesi Tamir ve Servis | Hata Kodu Çözümü | 0542 654 61 13",
+    description: "Antalya'da çamaşır makinesi tamir ve servis hizmeti: çalışmıyor, su sızdırıyor, hata kodu veriyor, sıkmıyor arızalarında yerinde aynı gün destek.",
+    path: "/hizmetler/camasir-makinesi-tamiri",
+    keywords: ["antalya çamaşır makinesi tamiri", "çamaşır makinesi servis antalya", "beyaz eşya bakım servisi"],
+});
 
 export default function CamasirMakinesiTamiriPage() {
     return (

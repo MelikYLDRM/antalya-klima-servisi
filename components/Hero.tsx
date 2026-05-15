@@ -46,18 +46,17 @@ export default function Hero() {
                         id="hero-heading"
                         className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
                     >
-                        Antalya Klima Tamiri,{" "}
-                        <span className="text-blue-300">Montajı ve Bakımı</span>
+                        Antalya Klima <span className="text-blue-300">Tamir, Bakım ve Servis</span>
                         <br />
                         <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white/90">
-                            + Beyaz Eşya Tamir Servisi
+                            + Beyaz Eşya Tamir ve Servis Hizmeti
                         </span>
                     </h1>
 
                     <p className="text-blue-100 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
-                        Muratpaşa ve tüm Antalya&apos;ya profesyonel klima tamiri, montajı,
-                        gaz dolumu ve bakımı hizmeti veriyoruz. Buzdolabı ve çamaşır
-                        makinesi arızalarında da yanınızdayız.
+                        Muratpaşa ve tüm Antalya&apos;ya profesyonel klima tamir, bakım ve
+                        servis hizmeti veriyoruz. Klima montajı, gaz dolumu ile buzdolabı
+                        ve çamaşır makinesi servisinde de yanınızdayız.
                     </p>
 
                     {/* CTA Buttons */}

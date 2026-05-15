@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Antalya Klima Montajı | Split Inverter Kaset Tipi | 0542 654 61 13",
-    description: "Antalya'da profesyonel klima montajı. Split, inverter ve kaset tipi klimalar için doğru konumlama, sızdırmaz boru bağlantısı ve tam gaz dolumu. 0542 654 61 13",
-    alternates: { canonical: `${SITE_URL}/hizmetler/klima-montaji` },
-    openGraph: {
-        title: "Antalya Klima Montajı | Split Inverter Kaset Tipi",
-        description: "Antalya'da profesyonel klima montajı. Split, inverter, kaset tipi. Ücretsiz keşif. 0542 654 61 13",
-        url: `${SITE_URL}/hizmetler/klima-montaji`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Antalya Klima Montajı ve Servisi | Split Inverter Kaset Tipi | 0542 654 61 13",
+    description: "Antalya'da profesyonel klima montaj ve servis hizmeti. Split, inverter ve kaset tipinde doğru konumlama, sızdırmaz bağlantı ve güvenli kurulum.",
+    path: "/hizmetler/klima-montaji",
+    keywords: ["antalya klima montajı", "klima kurulum servisi antalya", "split klima montaj"],
+});
 
 export default function KlimaMontajiPage() {
     return (

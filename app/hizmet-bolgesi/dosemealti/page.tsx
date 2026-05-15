@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import AreaPageTemplate from "@/components/AreaPageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Döşemealtı Klima Servisi | Antalya Klima Tamiri — 0542 654 61 13",
-    description: "Döşemealtı'nda klima tamiri, montajı ve bakımı. Çıplaklı, Hacilar, Işıklar mahallelerinde servis.",
-    alternates: { canonical: `${SITE_URL}/hizmet-bolgesi/dosemealti` },
-    openGraph: {
-        title: "Döşemealtı Klima Servisi",
-        description: "Döşemealtı'nda klima tamiri, montajı ve bakımı. Aynı gün servis.",
-        url: `${SITE_URL}/hizmet-bolgesi/dosemealti`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Döşemealtı Klima Tamir, Bakım ve Servis | Antalya | 0542 654 61 13",
+    description: "Döşemealtı'nda klima tamir, bakım ve servis hizmeti. Çıplaklı, Hacılar ve Işıklar mahallelerinde planlı ve hızlı servis.",
+    path: "/hizmet-bolgesi/dosemealti",
+});
 
 export default function DosemealtiPage() {
     return (

@@ -3,26 +3,29 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import {
+    OG_IMAGE_PATH,
+    SITE_URL,
+    buildBreadcrumbSchema,
+    buildPageMetadata,
+    getAbsoluteUrl,
+} from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
 const PHONE = "05426546113";
 const PHONE_DISPLAY = "0542 654 61 13";
 const WHATSAPP = "https://wa.me/905426546113";
 const PUBLISHED = "2025-01-15";
+const MODIFIED = "2026-05-15";
+const PAGE_PATH = "/rehber/split-klima-montaji-nasil-yapilir";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
     title: "Split Klima Montajı Nasıl Yapılır? | Antalya Klima Servisi",
-    description: "Split klima montajında doğru konum seçimi, boru bağlantısı, gaz dolumu ve sık yapılan hatalar hakkında kapsamlı rehber. Antalya profesyonel klima montajı.",
-    alternates: { canonical: `${SITE_URL}/rehber/split-klima-montaji-nasil-yapilir` },
-    openGraph: {
-        type: "article",
-        title: "Split Klima Montajı Nasıl Yapılır?",
-        description: "Split klima montajında doğru konum seçimi, boru bağlantısı, gaz dolumu ve sık yapılan hatalar hakkında kapsamlı rehber.",
-        url: `${SITE_URL}/rehber/split-klima-montaji-nasil-yapilir`,
-        publishedTime: PUBLISHED,
-        authors: ["Antalya Klima Servisi"],
-    },
-};
+    description: "Split klima montajında doğru konum seçimi, boru bağlantısı ve güvenli servis adımları hakkında kapsamlı rehber.",
+    path: PAGE_PATH,
+    type: "article",
+    publishedTime: PUBLISHED,
+    modifiedTime: MODIFIED,
+});
 
 const jsonLdArticle = {
     "@context": "https://schema.org",
@@ -30,20 +33,30 @@ const jsonLdArticle = {
     headline: "Split Klima Montajı Nasıl Yapılır?",
     description: "Split klima montajında doğru konum seçimi, boru bağlantısı, gaz dolumu ve sık yapılan hatalar hakkında kapsamlı rehber.",
     datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    image: getAbsoluteUrl(OG_IMAGE_PATH),
+    inLanguage: "tr-TR",
+    articleSection: "Klima Montajı",
+    keywords: ["split klima montajı", "antalya klima montaj servisi", "klima kurulum"],
+    mainEntityOfPage: getAbsoluteUrl(PAGE_PATH),
     author: { "@type": "Organization", name: "Antalya Klima Servisi" },
-    publisher: { "@type": "Organization", name: "Antalya Klima Servisi", url: SITE_URL },
-    url: `${SITE_URL}/rehber/split-klima-montaji-nasil-yapilir`,
+    publisher: {
+        "@type": "Organization",
+        name: "Antalya Klima Servisi",
+        url: SITE_URL,
+        logo: {
+            "@type": "ImageObject",
+            url: getAbsoluteUrl(OG_IMAGE_PATH),
+        },
+    },
+    url: getAbsoluteUrl(PAGE_PATH),
 };
 
-const jsonLdBreadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Rehber", item: `${SITE_URL}/rehber` },
-        { "@type": "ListItem", position: 3, name: "Split Klima Montajı Nasıl Yapılır?", item: `${SITE_URL}/rehber/split-klima-montaji-nasil-yapilir` },
-    ],
-};
+const jsonLdBreadcrumb = buildBreadcrumbSchema([
+    { name: "Ana Sayfa", path: "/" },
+    { name: "Rehber", path: "/rehber" },
+    { name: "Split Klima Montajı Nasıl Yapılır?", path: PAGE_PATH },
+]);
 
 export default function SplitKlimaMontajiPage() {
     return (

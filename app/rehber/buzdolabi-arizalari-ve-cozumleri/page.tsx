@@ -3,26 +3,29 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import {
+    OG_IMAGE_PATH,
+    SITE_URL,
+    buildBreadcrumbSchema,
+    buildPageMetadata,
+    getAbsoluteUrl,
+} from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
 const PHONE = "05426546113";
 const PHONE_DISPLAY = "0542 654 61 13";
 const WHATSAPP = "https://wa.me/905426546113";
 const PUBLISHED = "2025-01-15";
+const MODIFIED = "2026-05-15";
+const PAGE_PATH = "/rehber/buzdolabi-arizalari-ve-cozumleri";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
     title: "Buzdolabı Arızaları ve Çözümleri | Antalya Beyaz Eşya Servisi",
-    description: "Buzdolabınız soğutmuyor, aşırı buz yapıyor, ses çıkarıyor veya su akıtıyor mu? En yaygın buzdolabı arızaları, nedenleri ve çözümleri hakkında kapsamlı rehber.",
-    alternates: { canonical: `${SITE_URL}/rehber/buzdolabi-arizalari-ve-cozumleri` },
-    openGraph: {
-        type: "article",
-        title: "Buzdolabı Arızaları ve Çözümleri",
-        description: "En yaygın buzdolabı arızaları, nedenleri ve çözümleri hakkında kapsamlı rehber. Antalya beyaz eşya servisi.",
-        url: `${SITE_URL}/rehber/buzdolabi-arizalari-ve-cozumleri`,
-        publishedTime: PUBLISHED,
-        authors: ["Antalya Klima Servisi"],
-    },
-};
+    description: "Buzdolabı soğutmama, buzlanma ve su akıtma arızalarının nedenleri ile profesyonel tamir ve servis çözümleri.",
+    path: PAGE_PATH,
+    type: "article",
+    publishedTime: PUBLISHED,
+    modifiedTime: MODIFIED,
+});
 
 const jsonLdArticle = {
     "@context": "https://schema.org",
@@ -30,20 +33,30 @@ const jsonLdArticle = {
     headline: "Buzdolabı Arızaları ve Çözümleri",
     description: "En yaygın buzdolabı arızaları, nedenleri ve çözümleri hakkında kapsamlı rehber.",
     datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    image: getAbsoluteUrl(OG_IMAGE_PATH),
+    inLanguage: "tr-TR",
+    articleSection: "Beyaz Eşya Servisi",
+    keywords: ["buzdolabı tamiri", "buzdolabı servis", "antalya beyaz eşya servisi"],
+    mainEntityOfPage: getAbsoluteUrl(PAGE_PATH),
     author: { "@type": "Organization", name: "Antalya Klima Servisi" },
-    publisher: { "@type": "Organization", name: "Antalya Klima Servisi", url: SITE_URL },
-    url: `${SITE_URL}/rehber/buzdolabi-arizalari-ve-cozumleri`,
+    publisher: {
+        "@type": "Organization",
+        name: "Antalya Klima Servisi",
+        url: SITE_URL,
+        logo: {
+            "@type": "ImageObject",
+            url: getAbsoluteUrl(OG_IMAGE_PATH),
+        },
+    },
+    url: getAbsoluteUrl(PAGE_PATH),
 };
 
-const jsonLdBreadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Rehber", item: `${SITE_URL}/rehber` },
-        { "@type": "ListItem", position: 3, name: "Buzdolabı Arızaları ve Çözümleri", item: `${SITE_URL}/rehber/buzdolabi-arizalari-ve-cozumleri` },
-    ],
-};
+const jsonLdBreadcrumb = buildBreadcrumbSchema([
+    { name: "Ana Sayfa", path: "/" },
+    { name: "Rehber", path: "/rehber" },
+    { name: "Buzdolabı Arızaları ve Çözümleri", path: PAGE_PATH },
+]);
 
 export default function BuzdolabiArizalariPage() {
     return (

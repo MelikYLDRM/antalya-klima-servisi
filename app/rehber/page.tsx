@@ -3,16 +3,21 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { buildBreadcrumbSchema, buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
 const PHONE = "05426546113";
 const PHONE_DISPLAY = "0542 654 61 13";
 
-export const metadata: Metadata = {
-    title: "Klima ve Beyaz Eşya Rehberi | Antalya Klima Servisi",
-    description: "Klima bakımı, montajı, gaz dolumu ve beyaz eşya tamiri hakkında bilgi edinmek için rehber makalelerimizi inceleyin.",
-    alternates: { canonical: `${SITE_URL}/rehber` },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Klima ve Beyaz Eşya Rehberi | Antalya Tamir, Bakım ve Servis",
+    description: "Klima tamir, bakım ve servis süreçleri ile beyaz eşya arızaları hakkında profesyonel rehber içeriklerini inceleyin.",
+    path: "/rehber",
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Ana Sayfa", path: "/" },
+    { name: "Rehber", path: "/rehber" },
+]);
 
 const articles = [
     {
@@ -50,6 +55,7 @@ const articles = [
 export default function RehberPage() {
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <Header />
             <main>
                 <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-14 md:py-20">
