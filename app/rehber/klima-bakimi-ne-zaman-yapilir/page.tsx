@@ -93,7 +93,7 @@ export default function KlimaBakimiNezamanPage() {
 
                         <h2>Klima Bakımı Hangi Mevsimde Yapılmalı?</h2>
                         <p>
-                            Klima bakımı için en doğru zaman, yoğun kullanım sezonundan birkaç hafta önce yapılmasıdır. Türkiye'nin Akdeniz ikliminin hâkim olduğu Antalya'da bu iki dönem öne çıkar:
+                            Klima bakımı için en doğru zaman, yoğun kullanım sezonundan birkaç hafta önce yapılmasıdır. Türkiye&apos;nin Akdeniz ikliminin hâkim olduğu Antalya&apos;da bu iki dönem öne çıkar:
                         </p>
                         <ul>
                             <li>
@@ -104,7 +104,7 @@ export default function KlimaBakimiNezamanPage() {
                             </li>
                         </ul>
                         <p>
-                            Yılda bir kez bakım yaptırmak asgari standarttır; ancak yoğun kullanım, tuzlu deniz havası ya da tozlu çevre koşullarında yılda iki kez bakım çok daha sağlıklı sonuçlar verir. Antalya'nın sahil kesimleri için yılda iki kez bakım kesinlikle tavsiye edilir.
+                            Yılda bir kez bakım yaptırmak asgari standarttır; ancak yoğun kullanım, tuzlu deniz havası ya da tozlu çevre koşullarında yılda iki kez bakım çok daha sağlıklı sonuçlar verir. Antalya&apos;nın sahil kesimleri için yılda iki kez bakım kesinlikle tavsiye edilir.
                         </p>
 
                         <h2>Klimanızın Bakım Zamanı Geldiğini Nasıl Anlarsınız?</h2>
@@ -144,9 +144,9 @@ export default function KlimaBakimiNezamanPage() {
                             <li><strong>Garanti kaybı:</strong> Yetkisiz müdahale cihaz garantisini geçersiz kılabilir.</li>
                         </ul>
 
-                        <h2>Antalya'da Klima Bakımı Fiyatları</h2>
+                        <h2>Antalya&apos;da Klima Bakımı Fiyatları</h2>
                         <p>
-                            Klima bakım ücreti; cihaz türüne, iç ünite sayısına ve temizlik gereksiniminin boyutuna göre değişir. Tek bir split klima için standart bakım fiyatları Antalya'da 500 TL ile 1.200 TL arasında değişmektedir. Çoklu iç ünite veya kaset tipi klimalar için fiyat ayrıca belirlenir.
+                            Klima bakım ücreti; cihaz türüne, iç ünite sayısına ve temizlik gereksiniminin boyutuna göre değişir. Tek bir split klima için standart bakım fiyatları Antalya&apos;da 500 TL ile 1.200 TL arasında değişmektedir. Çoklu iç ünite veya kaset tipi klimalar için fiyat ayrıca belirlenir.
                         </p>
                         <p>
                             Servisimiz keşif ücreti almamaktadır. Teknisyenimiz cihazınızı yerinde inceleyerek size net bir fiyat sunar; onay vermeniz durumunda bakıma başlanır. Gaz dolumu gerekiyorsa bu ücret ayrıca bildirilir.
@@ -156,7 +156,7 @@ export default function KlimaBakimiNezamanPage() {
                         </p>
 
                         <p>
-                            Klimanızın bakımını Antalya'nın uzman ekibine bırakın. <Link href="/hizmetler/klima-bakimi" className="text-blue-700 underline font-medium">Klima bakımı hizmetimiz</Link> hakkında daha fazla bilgi alabilir ya da aşağıdan randevu oluşturabilirsiniz.
+                            Klimanızın bakımını Antalya&apos;nın uzman ekibine bırakın. <Link href="/hizmetler/klima-bakimi" className="text-blue-700 underline font-medium">Klima bakımı hizmetimiz</Link> hakkında daha fazla bilgi alabilir ya da aşağıdan randevu oluşturabilirsiniz.
                         </p>
                     </div>
                 </article>

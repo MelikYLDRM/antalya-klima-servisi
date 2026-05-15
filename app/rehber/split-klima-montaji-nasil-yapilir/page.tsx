@@ -151,7 +151,7 @@ export default function SplitKlimaMontajiPage() {
                             Profesyonel montaj yalnızca garantiyi korumakla kalmaz; aynı zamanda sistemin tasarım kapasitesinde çalışmasını, gaz basıncının fabrika değerinde kalmasını ve boru bağlantılarının sızdırmaz olmasını güvence altına alır. Daha düşük fiyatlı montaj tekliflerinin çoğu vakumlama ve sızdırmazlık testlerini atlamaktadır; bu kestirme yol kısa vadede kazandırır gibi görünse de uzun vadede çok daha pahalıya mal olur.
                         </p>
                         <p>
-                            Antalya'da uzman ekibimizle gerçekleştirilen <Link href="/hizmetler/klima-montaji" className="text-blue-700 underline font-medium">klima montajı hizmetimiz</Link> hakkında bilgi almak veya randevu oluşturmak için hemen iletişime geçin.
+                            Antalya&apos;da uzman ekibimizle gerçekleştirilen <Link href="/hizmetler/klima-montaji" className="text-blue-700 underline font-medium">klima montajı hizmetimiz</Link> hakkında bilgi almak veya randevu oluşturmak için hemen iletişime geçin.
                         </p>
                     </div>
                 </article>

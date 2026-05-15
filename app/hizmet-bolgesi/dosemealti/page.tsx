@@ -13,7 +13,7 @@ export default function DosemealtiPage() {
         <AreaPageTemplate
             areaName="Döşemealtı"
             slug="dosemealti"
-            neighborhoods={["Çıplaklı", "Hacilar", "Işıklar", "Kepez Burnu", "Kızılcadağ", "Sarılar"]}
+            neighborhoods={["Çıplaklı", "Hacılar", "Işıklar", "Kepez Burnu", "Kızılcadağ", "Sarılar"]}
             introText="Döşemealtı ilçesine de düzenli servis veriyoruz. Şehir merkezinden biraz uzak olsa da aynı gün servis imkânı sunuyoruz."
             bodyText="Döşemealtı'nın kırsal yapısındaki evler ve yazlıklar için de klima hizmeti veriyoruz. Bölgenin sıcak yazları ve klimalar için zorlu koşulları nedeniyle düzenli bakım önerilir."
             distanceNote="Döşemealtı'na ortalama 30-40 dakika içinde ulaşıyoruz. Önceden randevu almanızı öneririz."

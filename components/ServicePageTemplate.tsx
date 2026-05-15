@@ -85,7 +85,7 @@ export default function ServicePageTemplate({
         "@context": "https://schema.org",
         "@type": "Service",
         "@id": `${SITE_URL}/hizmetler/${slug}#service`,
-        name: `Antalya ${title}`,
+        name: `Antalya ${title} Hizmeti`,
         description: heroSubtitle,
         provider: { "@id": `${SITE_URL}/#business` },
         image: getAbsoluteUrl(OG_IMAGE_PATH),
@@ -107,13 +107,12 @@ export default function ServicePageTemplate({
             })),
         },
         areaServed: { "@type": "City", name: "Antalya" },
-        serviceType: title,
+        serviceType: `${title} hizmeti`,
         url: `${SITE_URL}/hizmetler/${slug}`,
     };
 
     const breadcrumbSchema = buildBreadcrumbSchema([
         { name: "Ana Sayfa", path: "/" },
-        { name: "Hizmetler", path: "/#hizmetler" },
         { name: `Antalya ${title}`, path: `/hizmetler/${slug}` },
     ]);
 
@@ -132,8 +131,6 @@ export default function ServicePageTemplate({
                         <nav aria-label="Breadcrumb" className="mb-6">
                             <ol className="flex flex-wrap items-center gap-1.5 text-sm text-blue-200">
                                 <li><Link href="/" className="hover:text-white transition-colors">Ana Sayfa</Link></li>
-                                <li aria-hidden="true" className="text-blue-400">/</li>
-                                <li><Link href="/#hizmetler" className="hover:text-white transition-colors">Hizmetler</Link></li>
                                 <li aria-hidden="true" className="text-blue-400">/</li>
                                 <li className="text-white font-medium" aria-current="page">{title}</li>
                             </ol>

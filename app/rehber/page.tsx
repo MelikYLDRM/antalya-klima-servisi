@@ -3,15 +3,27 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { buildBreadcrumbSchema, buildPageMetadata } from "@/utils/seo";
+import {
+    BRAND_NAME,
+    OG_IMAGE_PATH,
+    buildBreadcrumbSchema,
+    buildPageMetadata,
+    getAbsoluteUrl,
+} from "@/utils/seo";
 
 const PHONE = "05426546113";
 const PHONE_DISPLAY = "0542 654 61 13";
 
 export const metadata: Metadata = buildPageMetadata({
-    title: "Klima ve Beyaz Eşya Rehberi | Antalya Tamir, Bakım ve Servis",
-    description: "Klima tamir, bakım ve servis süreçleri ile beyaz eşya arızaları hakkında profesyonel rehber içeriklerini inceleyin.",
+    title: "Klima ve Beyaz Eşya Rehberi | Antalya Teknik Servis Bilgi Merkezi",
+    description: "Klima bakımı, tamiri, montajı ve beyaz eşya arızaları hakkında uzman ekibimizin hazırladığı kapsamlı rehber içeriklerini inceleyin.",
     path: "/rehber",
+    keywords: [
+        "antalya klima rehberi",
+        "klima bakımı rehberi",
+        "klima tamiri ipuçları",
+        "beyaz eşya arıza çözümleri",
+    ],
 });
 
 const breadcrumbSchema = buildBreadcrumbSchema([
@@ -52,10 +64,39 @@ const articles = [
     },
 ];
 
+const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${getAbsoluteUrl("/rehber")}#collection`,
+    name: "Klima ve Beyaz Eşya Rehberi",
+    description:
+        "Antalya'da klima ve beyaz eşya kullanıcıları için bakım, tamir ve servis süreçlerini anlatan rehber içerikleri.",
+    url: getAbsoluteUrl("/rehber"),
+    inLanguage: "tr-TR",
+    mainEntity: {
+        "@type": "ItemList",
+        itemListElement: articles.map((article, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: getAbsoluteUrl(`/rehber/${article.slug}`),
+            name: article.title,
+        })),
+    },
+    publisher: {
+        "@type": "Organization",
+        name: BRAND_NAME,
+        logo: {
+            "@type": "ImageObject",
+            url: getAbsoluteUrl(OG_IMAGE_PATH),
+        },
+    },
+};
+
 export default function RehberPage() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
             <Header />
             <main>
                 <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-14 md:py-20">
@@ -68,7 +109,10 @@ export default function RehberPage() {
                             </ol>
                         </nav>
                         <h1 className="text-3xl sm:text-4xl font-extrabold mb-4">Klima ve Beyaz Eşya Rehberi</h1>
-                        <p className="text-blue-100 text-lg max-w-2xl">Klima bakımı, montajı, gaz dolumu ve beyaz eşya tamiri hakkında merak ettiğiniz her şey bu rehberlerde.</p>
+                        <p className="text-blue-100 text-lg max-w-2xl">
+                            Antalya&apos;daki kullanıcılar için hazırladığımız rehberlerde klima bakımı, tamiri, montajı ve
+                            beyaz eşya arızalarına dair net ve uygulanabilir bilgiler bulabilirsiniz.
+                        </p>
                     </div>
                 </section>
 

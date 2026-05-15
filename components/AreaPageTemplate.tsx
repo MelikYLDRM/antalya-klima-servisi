@@ -34,7 +34,6 @@ export default function AreaPageTemplate({
 }: AreaPageProps) {
     const breadcrumbSchema = buildBreadcrumbSchema([
         { name: "Ana Sayfa", path: "/" },
-        { name: "Hizmet Bölgeleri", path: "/#bolgeler" },
         { name: `${areaName} Klima Servisi`, path: `/hizmet-bolgesi/${slug}` },
     ]);
 
@@ -42,7 +41,7 @@ export default function AreaPageTemplate({
         "@context": "https://schema.org",
         "@type": "HomeAndConstructionBusiness",
         "@id": `${SITE_URL}/#business`,
-        name: "Antalya Klima Beyaz Eşya Tamir, Bakım ve Servis",
+        name: "Antalya Klima ve Beyaz Eşya Servisi",
         url: SITE_URL,
         telephone: "+905426546113",
         image: getAbsoluteUrl(OG_IMAGE_PATH),
@@ -63,8 +62,9 @@ export default function AreaPageTemplate({
         "@context": "https://schema.org",
         "@type": "Service",
         "@id": `${SITE_URL}/hizmet-bolgesi/${slug}#service`,
-        name: `${areaName} Klima Tamir Bakım Servis`,
-        serviceType: "Klima tamir, bakım ve servis",
+        name: `${areaName} Klima Tamiri, Bakımı ve Servisi`,
+        description: `${areaName} bölgesinde yerinde klima tamiri, periyodik bakım ve teknik servis hizmeti.`,
+        serviceType: "Klima tamiri, bakımı ve teknik servis",
         provider: { "@id": `${SITE_URL}/#business` },
         areaServed: { "@type": "AdministrativeArea", name: areaName },
         hasOfferCatalog: {
@@ -97,8 +97,6 @@ export default function AreaPageTemplate({
                         <nav aria-label="Breadcrumb" className="mb-6">
                             <ol className="flex flex-wrap items-center gap-1.5 text-sm text-blue-200">
                                 <li><Link href="/" className="hover:text-white transition-colors">Ana Sayfa</Link></li>
-                                <li aria-hidden="true" className="text-blue-400">/</li>
-                                <li><Link href="/#bolgeler" className="hover:text-white transition-colors">Hizmet Bölgeleri</Link></li>
                                 <li aria-hidden="true" className="text-blue-400">/</li>
                                 <li className="text-white font-medium" aria-current="page">{areaName}</li>
                             </ol>

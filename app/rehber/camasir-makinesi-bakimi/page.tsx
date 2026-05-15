@@ -167,9 +167,9 @@ export default function CamasirMakinesiPage() {
                             <li><strong>Makinenin seviyesini kontrol edin:</strong> Eğik zemin titreşimi artırır ve rulmanlara erken aşınma getirir. Ayak vidalarıyla dengeleme yapın.</li>
                         </ul>
 
-                        <h2>Antalya'da Çamaşır Makinesi Tamiri</h2>
+                        <h2>Antalya&apos;da Çamaşır Makinesi Tamiri</h2>
                         <p>
-                            Antalya'da Muratpaşa, Kepez, Konyaaltı, Döşemealtı ve Aksu'da çamaşır makinesi tamir hizmeti veriyoruz. Tüm marka ve modellere, özellikle Arçelik, Beko, Bosch, Samsung, LG, Vestel ve Siemens gibi yaygın markalara bakım ve tamir yapıyoruz.
+                            Antalya&apos;da Muratpaşa, Kepez, Konyaaltı, Döşemealtı ve Aksu&apos;da çamaşır makinesi tamir hizmeti veriyoruz. Tüm marka ve modellere, özellikle Arçelik, Beko, Bosch, Samsung, LG, Vestel ve Siemens gibi yaygın markalara bakım ve tamir yapıyoruz.
                         </p>
                         <p>
                             Keşif ücreti almıyoruz; teknisyenimiz adresinize gelir, arızayı tespit eder ve net fiyat bildirir. <Link href="/hizmetler/camasir-makinesi-tamiri" className="text-blue-700 underline font-medium">Çamaşır makinesi tamiri hizmetimiz</Link> hakkında daha fazla bilgi alabilir ya da hemen iletişime geçebilirsiniz.

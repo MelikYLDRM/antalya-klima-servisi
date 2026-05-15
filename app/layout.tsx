@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
     title: {
         default:
-            "Antalya Klima Tamir, Bakım ve Servis | Muratpaşa Klima Montajı | 0542 654 61 13",
+            "Antalya Klima Tamiri, Bakımı ve Servisi | Muratpaşa ve Çevresi | 0542 654 61 13",
         template: "%s | Antalya Klima Servisi",
     },
     description:
-        "Antalya Muratpaşa'da profesyonel klima tamir, bakım ve servis hizmetleri. Klima montajı, buzdolabı ve çamaşır makinesi servis çözümleri için hemen arayın: 0542 654 61 13",
+        "Antalya Muratpaşa merkezli ekibimizle klima tamiri, klima bakımı, klima montajı ve beyaz eşya servis hizmetleri sunuyoruz. Hızlı randevu için arayın: 0542 654 61 13",
     keywords: [
         "antalya klima tamir bakım servis",
         "antalya klima tamiri",
@@ -60,23 +60,23 @@ export const metadata: Metadata = {
         url: SITE_URL,
         siteName: BRAND_NAME,
         title:
-            "Antalya Klima Tamir, Bakım ve Servis | Muratpaşa Klima Montajı | 0542 654 61 13",
+            "Antalya Klima Tamiri, Bakımı ve Servisi | Muratpaşa ve Çevresi | 0542 654 61 13",
         description:
-            "Antalya Muratpaşa'da profesyonel klima tamir, bakım ve servis hizmetleri. Klima montajı ve beyaz eşya servis desteği.",
+            "Antalya'da klima tamiri, periyodik bakım, montaj ve beyaz eşya servis hizmetleri.",
         images: [
             {
                 url: getAbsoluteUrl(OG_IMAGE_PATH),
                 width: 1200,
                 height: 630,
-                alt: "Antalya Klima Tamir, Bakım ve Servis",
+                alt: "Antalya Klima Tamiri, Bakımı ve Servisi",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Antalya Klima Tamir, Bakım ve Servis | 0542 654 61 13",
+        title: "Antalya Klima Tamiri, Bakımı ve Servisi | 0542 654 61 13",
         description:
-            "Antalya Muratpaşa'da profesyonel klima tamir, bakım ve servis. Buzdolabı ve çamaşır makinesi servis çözümleri.",
+            "Antalya'da klima tamiri, bakım, montaj ve beyaz eşya servis hizmetleri.",
         images: [getAbsoluteUrl(OG_IMAGE_PATH)],
     },
     other: {
@@ -113,7 +113,7 @@ const localBusinessSchema = {
     "@type": "HomeAndConstructionBusiness",
     "@id": `${SITE_URL}/#business`,
     name: BRAND_NAME,
-    alternateName: "Antalya Klima Tamir Bakım Servisi",
+    alternateName: "Antalya Klima Tamiri ve Bakım Servisi",
     url: SITE_URL,
     telephone: `+90${PHONE.slice(1)}`,
     image: getAbsoluteUrl(OG_IMAGE_PATH),
@@ -205,7 +205,7 @@ const websiteSchema = {
     url: SITE_URL,
     name: BRAND_NAME,
     description:
-        "Antalya Muratpaşa'da klima tamir, bakım ve servis hizmetleri ile beyaz eşya servis çözümleri",
+        "Antalya Muratpaşa'da klima tamiri, bakım, montaj ve beyaz eşya servis hizmetleri",
     inLanguage: "tr-TR",
     publisher: { "@id": `${SITE_URL}/#organization` },
     potentialAction: {
@@ -223,12 +223,12 @@ const serviceSchemas = [
         "@context": "https://schema.org",
         "@type": "Service",
         "@id": `${SITE_URL}/#service-klima-tamiri`,
-        name: "Klima Tamir, Bakım ve Servis",
+        name: "Klima Tamiri, Bakımı ve Teknik Servis",
         description:
-            "Antalya Muratpaşa'da tüm marka ve model klimalar için profesyonel tamir, bakım ve servis hizmeti.",
+            "Antalya'da tüm marka klimalar için arıza tespiti, bakım ve teknik servis hizmeti.",
         provider: { "@id": `${SITE_URL}/#business` },
         areaServed: { "@type": "City", name: "Antalya" },
-        serviceType: "Klima Tamir Bakım Servis",
+        serviceType: "Klima tamiri, bakımı ve teknik servis",
         url: SITE_URL,
     },
     {
