@@ -117,13 +117,13 @@ export default function KlimaGazDolumuPage() {
                         </p>
                         <ul>
                             <li>
-                                <strong>R22 (Freon):</strong> Eski nesil klimaların büyük çoğunluğunda kullanılan bu gaz, ozon tabakasına zararlı olduğu için Avrupa'da 2015 yılında yasaklanmıştır. Türkiye'de de kullanımı aşamalı olarak kısıtlanmaktadır. Eğer klimanız 2010 öncesine aitse R22 kullanıyor olabilir. Bu gaz artık çok sınırlı temin edilmekte olup yüksek maliyetlidir. R22 kullanan eski klimaların yeni nesil cihazlarla değiştirilmesi tavsiye edilir.
+                                <strong>R22 (Freon):</strong> Eski nesil klimaların büyük çoğunluğunda kullanılan bu gaz, ozon tabakasına zararlı olduğu için Avrupa&apos;da 2015 yılında yasaklanmıştır. Türkiye&apos;de de kullanımı aşamalı olarak kısıtlanmaktadır. Eğer klimanız 2010 öncesine aitse R22 kullanıyor olabilir. Bu gaz artık çok sınırlı temin edilmekte olup yüksek maliyetlidir. R22 kullanan eski klimaların yeni nesil cihazlarla değiştirilmesi tavsiye edilir.
                             </li>
                             <li>
-                                <strong>R410A:</strong> 2000'li yılların ortasından itibaren yaygınlaşan ve ozon tabakasına zarar vermeyen bu gaz, uzun yıllar standart olarak kullanıldı. Küresel ısınmaya etkisi (GWP) görece yüksek olduğundan yeni nesil düzenlemelerle kullanımı kısıtlanma sürecindedir. Mevcut birçok klimada hâlâ kullanılmaktadır.
+                                <strong>R410A:</strong> 2000&apos;li yılların ortasından itibaren yaygınlaşan ve ozon tabakasına zarar vermeyen bu gaz, uzun yıllar standart olarak kullanıldı. Küresel ısınmaya etkisi (GWP) görece yüksek olduğundan yeni nesil düzenlemelerle kullanımı kısıtlanma sürecindedir. Mevcut birçok klimada hâlâ kullanılmaktadır.
                             </li>
                             <li>
-                                <strong>R32:</strong> Günümüzde yeni üretilen klimaların büyük çoğunluğu R32 ile çalışır. R410A'ya kıyasla küresel ısınmaya etkisi yaklaşık üçte bir oranında düşüktür ve enerji verimliliği daha yüksektir. Hafif yanıcı özelliği nedeniyle uygun taşıma ve depolama koşulları gerektirir; bu nedenle dolumu mutlaka sertifikalı teknisyen tarafından yapılmalıdır.
+                                <strong>R32:</strong> Günümüzde yeni üretilen klimaların büyük çoğunluğu R32 ile çalışır. R410A&apos;ya kıyasla küresel ısınmaya etkisi yaklaşık üçte bir oranında düşüktür ve enerji verimliliği daha yüksektir. Hafif yanıcı özelliği nedeniyle uygun taşıma ve depolama koşulları gerektirir; bu nedenle dolumu mutlaka sertifikalı teknisyen tarafından yapılmalıdır.
                             </li>
                         </ul>
                         <p>
@@ -145,7 +145,7 @@ export default function KlimaGazDolumuPage() {
 
                         <h2>Gaz Dolumu Fiyatları</h2>
                         <p>
-                            Klima gaz dolumu fiyatı; kullanılan gaz türüne, klimanın kapasitesine (BTU) ve ne kadar gaz eksildiğine göre değişir. R32 ve R410A gazları için Antalya'da genel fiyat aralıkları şöyle özetlenebilir: küçük kapasiteli bir ev kliması için kaçak tamiri dahil gaz dolumu 800 TL ile 2.000 TL arasında değişmektedir. R22 gaz fiyatları ise gazın azalan arzı nedeniyle daha yüksektir.
+                            Klima gaz dolumu fiyatı; kullanılan gaz türüne, klimanın kapasitesine (BTU) ve ne kadar gaz eksildiğine göre değişir. R32 ve R410A gazları için Antalya&apos;da genel fiyat aralıkları şöyle özetlenebilir: küçük kapasiteli bir ev kliması için kaçak tamiri dahil gaz dolumu 800 TL ile 2.000 TL arasında değişmektedir. R22 gaz fiyatları ise gazın azalan arzı nedeniyle daha yüksektir.
                         </p>
                         <p>
                             Servisimiz keşif ücreti almaz. Teknisyenimiz gelir, kaçak tespitini yapar ve gaz dolumu ile kaçak tamiri için net fiyat bildirir. <Link href="/hizmetler/klima-tamiri" className="text-blue-700 underline font-medium">Klima tamiri ve gaz dolumu hizmetimiz</Link> hakkında detaylı bilgi alabilirsiniz.

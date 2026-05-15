@@ -9,9 +9,9 @@ const areas = [
     },
     { name: "Kepez", slug: "kepez", description: "Altınova, Gürsu, Varsak, Santral Mahallesi" },
     { name: "Konyaaltı", slug: "konyaalti", description: "Uncalı, Sarısu, Hurma, Liman Mahallesi" },
-    { name: "Döşemealtı", slug: "dosemealti", description: "Çıplaklı, Hacilar, Işıklar" },
+    { name: "Döşemealtı", slug: "dosemealti", description: "Çıplaklı, Hacılar, Işıklar" },
     { name: "Antalya Merkez", slug: "muratpasa", description: "Tüm merkez mahalleler" },
-    { name: "Aksu", slug: "aksu", description: "Düden, Çandır, Serik yolu" },
+    { name: "Aksu", slug: "aksu", description: "Düden, Çandır, Serik Yolu" },
 ];
 
 export default function ServiceAreas() {

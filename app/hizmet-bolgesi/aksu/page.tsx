@@ -13,8 +13,8 @@ export default function AksuPage() {
         <AreaPageTemplate
             areaName="Aksu"
             slug="aksu"
-            neighborhoods={["Düden", "Çandır", "Serik yolu", "Karaöz", "Perge", "Atatürk"]}
-            introText="Antalya'nın doğu kapısı Aksu'ya da servis veriyoruz. Havalimanı yakını, Lara koridoru ve Serik yolu boyunca tüm noktalara ulaşıyoruz."
+            neighborhoods={["Düden", "Çandır", "Serik Yolu", "Karaöz", "Perge", "Atatürk"]}
+            introText="Antalya'nın doğu kapısı Aksu'ya da servis veriyoruz. Havalimanı yakını, Lara koridoru ve Serik Yolu boyunca tüm noktalara ulaşıyoruz."
             bodyText="Aksu'da hem konut hem de ticari alanlara klima ve beyaz eşya tamir hizmeti sunuyoruz. Havalimanı bölgesindeki yoğun turizm yapılarına özel hizmet deneyimimiz var."
             distanceNote="Aksu'ya ortalama 25-40 dakika içinde ulaşıyoruz."
             services={[
