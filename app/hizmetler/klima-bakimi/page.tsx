@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Antalya Klima Bakımı | Periyodik Temizlik ve Kontrol | 0542 654 61 13",
-    description: "Antalya'da yıllık klima bakımı: filtre temizliği, dış ünite yıkama, gaz kontrolü. Cihaz ömrünü uzatın, enerji faturasını düşürün. Ücretsiz keşif: 0542 654 61 13",
-    alternates: { canonical: `${SITE_URL}/hizmetler/klima-bakimi` },
-    openGraph: {
-        title: "Antalya Klima Bakımı | Periyodik Temizlik ve Kontrol",
-        description: "Antalya'da yıllık klima bakımı. Filtre temizliği, gaz kontrolü, dış ünite yıkama. 0542 654 61 13",
-        url: `${SITE_URL}/hizmetler/klima-bakimi`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Antalya Klima Bakımı ve Servisi | Periyodik Kontrol | 0542 654 61 13",
+    description: "Antalya'da yıllık klima bakım ve servis hizmeti: filtre temizliği, dış ünite yıkama, gaz kontrolü. Cihaz ömrünü uzatın ve enerji verimini artırın.",
+    path: "/hizmetler/klima-bakimi",
+    keywords: ["antalya klima bakımı", "klima servis antalya", "periyodik klima bakımı"],
+});
 
 export default function KlimaBakimiPage() {
     return (

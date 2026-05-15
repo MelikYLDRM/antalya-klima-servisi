@@ -2,11 +2,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-
-const PHONE = "05426546113";
-const PHONE_DISPLAY = "0542 654 61 13";
+import { buildBreadcrumbSchema, getAbsoluteUrl, OG_IMAGE_PATH, PHONE, PHONE_DISPLAY, SITE_URL } from "@/utils/seo";
 const WA_LINK = `https://wa.me/90${PHONE.slice(1)}?text=Merhaba,%20klima%20servisi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`;
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
 
 export interface AreaService {
     title: string;
@@ -35,23 +32,20 @@ export default function AreaPageTemplate({
     distanceNote,
     specialNote,
 }: AreaPageProps) {
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: SITE_URL },
-            { "@type": "ListItem", position: 2, name: "Hizmet Bölgeleri", item: `${SITE_URL}/#bolgeler` },
-            { "@type": "ListItem", position: 3, name: `${areaName} Klima Servisi`, item: `${SITE_URL}/hizmet-bolgesi/${slug}` },
-        ],
-    };
+    const breadcrumbSchema = buildBreadcrumbSchema([
+        { name: "Ana Sayfa", path: "/" },
+        { name: "Hizmet Bölgeleri", path: "/#bolgeler" },
+        { name: `${areaName} Klima Servisi`, path: `/hizmet-bolgesi/${slug}` },
+    ]);
 
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "HomeAndConstructionBusiness",
         "@id": `${SITE_URL}/#business`,
-        name: "Antalya Klima Beyaz Eşya Tamir Servisi",
+        name: "Antalya Klima Beyaz Eşya Tamir, Bakım ve Servis",
         url: SITE_URL,
         telephone: "+905426546113",
+        image: getAbsoluteUrl(OG_IMAGE_PATH),
         areaServed: [
             { "@type": "City", name: "Antalya" },
             { "@type": "AdministrativeArea", name: areaName },
@@ -65,11 +59,34 @@ export default function AreaPageTemplate({
             addressCountry: "TR",
         },
     };
+    const serviceSchema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${SITE_URL}/hizmet-bolgesi/${slug}#service`,
+        name: `${areaName} Klima Tamir Bakım Servis`,
+        serviceType: "Klima tamir, bakım ve servis",
+        provider: { "@id": `${SITE_URL}/#business` },
+        areaServed: { "@type": "AdministrativeArea", name: areaName },
+        hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: `${areaName} hizmetleri`,
+            itemListElement: services.map((service) => ({
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: service.title,
+                    description: service.description,
+                },
+            })),
+        },
+        url: `${SITE_URL}/hizmet-bolgesi/${slug}`,
+    };
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
             <Header />
             <main>
@@ -176,7 +193,7 @@ export default function AreaPageTemplate({
                         <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
                             {areaName}&apos;da Klima Arızanız mı Var?
                         </h2>
-                        <p className="text-blue-200 mb-6 text-lg">Aynı gün servis. Ücretsiz keşif. Net fiyat garantisi.</p>
+                        <p className="text-blue-200 mb-6 text-lg">Aynı gün tamir, bakım ve servis. Ücretsiz keşif. Net fiyat garantisi.</p>
                         <div className="flex flex-col sm:flex-row gap-3 justify-center">
                             <a
                                 href={`tel:${PHONE}`}

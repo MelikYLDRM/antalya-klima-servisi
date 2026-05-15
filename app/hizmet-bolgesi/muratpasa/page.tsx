@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import AreaPageTemplate from "@/components/AreaPageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Muratpaşa Klima Servisi | Antalya Klima Tamiri — 0542 654 61 13",
-    description: "Muratpaşa'da klima tamiri, montajı ve bakımı. Tahılpazarı, Kışla, Fener, Lara, Şirinyalı mahallelerinde aynı gün servis. 0542 654 61 13",
-    alternates: { canonical: `${SITE_URL}/hizmet-bolgesi/muratpasa` },
-    openGraph: {
-        title: "Muratpaşa Klima Servisi",
-        description: "Muratpaşa'da klima tamiri, montajı ve bakımı. Aynı gün servis.",
-        url: `${SITE_URL}/hizmet-bolgesi/muratpasa`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Muratpaşa Klima Tamir, Bakım ve Servis | Antalya | 0542 654 61 13",
+    description: "Muratpaşa'da klima tamir, bakım ve servis hizmeti. Tahılpazarı, Kışla, Fener, Lara ve Şirinyalı mahallelerinde aynı gün profesyonel destek.",
+    path: "/hizmet-bolgesi/muratpasa",
+});
 
 export default function MuratpasaPage() {
     return (

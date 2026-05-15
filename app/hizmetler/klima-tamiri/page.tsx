@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Antalya Klima Tamiri | 0542 654 61 13 — Aynı Gün Servis",
-    description: "Antalya'da klima tamiri. Tüm marka ve modeller — soğutmuyor, sesli çalışıyor, su akıtıyor? Ücretsiz keşif, aynı gün servis: 0542 654 61 13",
-    alternates: { canonical: `${SITE_URL}/hizmetler/klima-tamiri` },
-    openGraph: {
-        title: "Antalya Klima Tamiri | Aynı Gün Servis",
-        description: "Antalya'da klima tamiri. Tüm marka ve modeller, ücretsiz keşif. 0542 654 61 13",
-        url: `${SITE_URL}/hizmetler/klima-tamiri`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Antalya Klima Tamir, Bakım ve Servis | 0542 654 61 13 — Aynı Gün Destek",
+    description: "Antalya'da klima tamir, bakım ve servis hizmeti. Soğutmuyor, sesli çalışıyor, su akıtıyor sorunlarında ücretsiz keşif ve aynı gün profesyonel servis.",
+    path: "/hizmetler/klima-tamiri",
+    keywords: ["antalya klima tamiri", "antalya klima bakımı", "antalya klima servis"],
+});
 
 export default function KlimaTamiriPage() {
     return (

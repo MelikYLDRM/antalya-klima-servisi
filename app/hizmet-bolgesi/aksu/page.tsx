@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import AreaPageTemplate from "@/components/AreaPageTemplate";
+import { buildPageMetadata } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
-
-export const metadata: Metadata = {
-    title: "Aksu Klima Servisi | Antalya Klima Tamiri — 0542 654 61 13",
-    description: "Aksu'da klima tamiri, montajı ve bakımı. Düden, Çandır, Serik yolu bölgelerinde servis.",
-    alternates: { canonical: `${SITE_URL}/hizmet-bolgesi/aksu` },
-    openGraph: {
-        title: "Aksu Klima Servisi",
-        description: "Aksu'da klima tamiri, montajı ve bakımı. Aynı gün servis.",
-        url: `${SITE_URL}/hizmet-bolgesi/aksu`,
-    },
-};
+export const metadata: Metadata = buildPageMetadata({
+    title: "Aksu Klima Tamir, Bakım ve Servis | Antalya | 0542 654 61 13",
+    description: "Aksu'da klima tamir, bakım ve servis hizmeti. Düden, Çandır, Serik Yolu bölgesinde aynı gün teknik servis desteği.",
+    path: "/hizmet-bolgesi/aksu",
+});
 
 export default function AksuPage() {
     return (

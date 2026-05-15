@@ -1,117 +1,65 @@
 import { MetadataRoute } from "next";
+import { getAbsoluteUrl } from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
+type SitemapEntry = {
+    path: string;
+    priority: number;
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+    lastModified?: string;
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
-        // Ana sayfa
-        {
-            url: SITE_URL,
-            lastModified: new Date("2025-05-10"),
-            changeFrequency: "weekly",
-            priority: 1,
-        },
+    const updatedAt = new Date("2026-05-15");
 
-        // Servis sayfaları
+    const routes: SitemapEntry[] = [
+        { path: "/", priority: 1, changeFrequency: "weekly" },
+        { path: "/hizmetler/klima-tamiri", priority: 0.95, changeFrequency: "monthly" },
+        { path: "/hizmetler/klima-bakimi", priority: 0.95, changeFrequency: "monthly" },
+        { path: "/hizmetler/klima-montaji", priority: 0.92, changeFrequency: "monthly" },
+        { path: "/hizmetler/buzdolabi-tamiri", priority: 0.9, changeFrequency: "monthly" },
+        { path: "/hizmetler/camasir-makinesi-tamiri", priority: 0.9, changeFrequency: "monthly" },
+        { path: "/hizmet-bolgesi/muratpasa", priority: 0.86, changeFrequency: "monthly" },
+        { path: "/hizmet-bolgesi/kepez", priority: 0.84, changeFrequency: "monthly" },
+        { path: "/hizmet-bolgesi/konyaalti", priority: 0.84, changeFrequency: "monthly" },
+        { path: "/hizmet-bolgesi/dosemealti", priority: 0.82, changeFrequency: "monthly" },
+        { path: "/hizmet-bolgesi/aksu", priority: 0.82, changeFrequency: "monthly" },
+        { path: "/rehber", priority: 0.8, changeFrequency: "weekly" },
         {
-            url: `${SITE_URL}/hizmetler/klima-tamiri`,
-            lastModified: new Date("2025-05-10"),
+            path: "/rehber/klima-bakimi-ne-zaman-yapilir",
+            priority: 0.72,
             changeFrequency: "monthly",
-            priority: 0.9,
+            lastModified: "2026-05-15",
         },
         {
-            url: `${SITE_URL}/hizmetler/klima-montaji`,
-            lastModified: new Date("2025-05-10"),
+            path: "/rehber/klima-gaz-dolumu-rehberi",
+            priority: 0.72,
             changeFrequency: "monthly",
-            priority: 0.9,
+            lastModified: "2026-05-15",
         },
         {
-            url: `${SITE_URL}/hizmetler/klima-bakimi`,
-            lastModified: new Date("2025-05-10"),
-            changeFrequency: "monthly",
-            priority: 0.9,
-        },
-        {
-            url: `${SITE_URL}/hizmetler/buzdolabi-tamiri`,
-            lastModified: new Date("2025-05-10"),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${SITE_URL}/hizmetler/camasir-makinesi-tamiri`,
-            lastModified: new Date("2025-05-10"),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-
-        // Bölge sayfaları
-        {
-            url: `${SITE_URL}/hizmet-bolgesi/muratpasa`,
-            lastModified: new Date("2025-05-10"),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${SITE_URL}/hizmet-bolgesi/kepez`,
-            lastModified: new Date("2025-05-10"),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${SITE_URL}/hizmet-bolgesi/konyaalti`,
-            lastModified: new Date("2025-05-10"),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${SITE_URL}/hizmet-bolgesi/dosemealti`,
-            lastModified: new Date("2025-05-10"),
-            changeFrequency: "monthly",
+            path: "/rehber/split-klima-montaji-nasil-yapilir",
             priority: 0.7,
-        },
-        {
-            url: `${SITE_URL}/hizmet-bolgesi/aksu`,
-            lastModified: new Date("2025-05-10"),
             changeFrequency: "monthly",
+            lastModified: "2026-05-15",
+        },
+        {
+            path: "/rehber/buzdolabi-arizalari-ve-cozumleri",
             priority: 0.7,
+            changeFrequency: "monthly",
+            lastModified: "2026-05-15",
         },
-
-        // Blog / Rehber
         {
-            url: `${SITE_URL}/rehber`,
-            lastModified: new Date("2025-05-10"),
-            changeFrequency: "weekly",
+            path: "/rehber/camasir-makinesi-bakimi",
             priority: 0.7,
-        },
-        {
-            url: `${SITE_URL}/rehber/klima-bakimi-ne-zaman-yapilir`,
-            lastModified: new Date("2025-01-15"),
-            changeFrequency: "yearly",
-            priority: 0.6,
-        },
-        {
-            url: `${SITE_URL}/rehber/klima-gaz-dolumu-rehberi`,
-            lastModified: new Date("2025-01-15"),
-            changeFrequency: "yearly",
-            priority: 0.6,
-        },
-        {
-            url: `${SITE_URL}/rehber/split-klima-montaji-nasil-yapilir`,
-            lastModified: new Date("2025-01-15"),
-            changeFrequency: "yearly",
-            priority: 0.6,
-        },
-        {
-            url: `${SITE_URL}/rehber/buzdolabi-arizalari-ve-cozumleri`,
-            lastModified: new Date("2025-01-15"),
-            changeFrequency: "yearly",
-            priority: 0.6,
-        },
-        {
-            url: `${SITE_URL}/rehber/camasir-makinesi-bakimi`,
-            lastModified: new Date("2025-01-15"),
-            changeFrequency: "yearly",
-            priority: 0.6,
+            changeFrequency: "monthly",
+            lastModified: "2026-05-15",
         },
     ];
+
+    return routes.map((route) => ({
+        url: getAbsoluteUrl(route.path),
+        lastModified: route.lastModified ? new Date(route.lastModified) : updatedAt,
+        changeFrequency: route.changeFrequency,
+        priority: route.priority,
+    }));
 }

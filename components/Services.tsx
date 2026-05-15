@@ -146,7 +146,7 @@ export default function Services() {
                         id="services-heading"
                         className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4"
                     >
-                        Klima ve Beyaz Eşya Tamir Servisi
+                        Klima ve Beyaz Eşya Tamir, Bakım ve Servis Hizmetleri
                     </h2>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                         Antalya Muratpaşa&apos;da tüm marka ve modellere yetkili servis

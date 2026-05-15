@@ -3,26 +3,29 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import {
+    OG_IMAGE_PATH,
+    SITE_URL,
+    buildBreadcrumbSchema,
+    buildPageMetadata,
+    getAbsoluteUrl,
+} from "@/utils/seo";
 
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
 const PHONE = "05426546113";
 const PHONE_DISPLAY = "0542 654 61 13";
 const WHATSAPP = "https://wa.me/905426546113";
 const PUBLISHED = "2025-01-15";
+const MODIFIED = "2026-05-15";
+const PAGE_PATH = "/rehber/camasir-makinesi-bakimi";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
     title: "Çamaşır Makinesi Bakımı ve Arızaları | Antalya Beyaz Eşya Servisi",
-    description: "Çamaşır makinenizi uzun ömürlü kullanmak için bakım ipuçları, yaygın arızalar, hata kodları ve ne zaman servis çağırmanız gerektiği hakkında kapsamlı rehber.",
-    alternates: { canonical: `${SITE_URL}/rehber/camasir-makinesi-bakimi` },
-    openGraph: {
-        type: "article",
-        title: "Çamaşır Makinesi Bakımı ve Arızaları",
-        description: "Çamaşır makinenizi uzun ömürlü kullanmak için bakım ipuçları, yaygın arızalar ve hata kodları hakkında kapsamlı rehber.",
-        url: `${SITE_URL}/rehber/camasir-makinesi-bakimi`,
-        publishedTime: PUBLISHED,
-        authors: ["Antalya Klima Servisi"],
-    },
-};
+    description: "Çamaşır makinesi bakım ipuçları, hata kodları ve profesyonel tamir-servis çözümleri hakkında kapsamlı rehber.",
+    path: PAGE_PATH,
+    type: "article",
+    publishedTime: PUBLISHED,
+    modifiedTime: MODIFIED,
+});
 
 const jsonLdArticle = {
     "@context": "https://schema.org",
@@ -30,20 +33,30 @@ const jsonLdArticle = {
     headline: "Çamaşır Makinesi Bakımı ve Arızaları",
     description: "Çamaşır makinenizi uzun ömürlü kullanmak için bakım ipuçları, yaygın arızalar ve hata kodları hakkında kapsamlı rehber.",
     datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    image: getAbsoluteUrl(OG_IMAGE_PATH),
+    inLanguage: "tr-TR",
+    articleSection: "Beyaz Eşya Servisi",
+    keywords: ["çamaşır makinesi tamiri", "çamaşır makinesi bakım", "antalya beyaz eşya servisi"],
+    mainEntityOfPage: getAbsoluteUrl(PAGE_PATH),
     author: { "@type": "Organization", name: "Antalya Klima Servisi" },
-    publisher: { "@type": "Organization", name: "Antalya Klima Servisi", url: SITE_URL },
-    url: `${SITE_URL}/rehber/camasir-makinesi-bakimi`,
+    publisher: {
+        "@type": "Organization",
+        name: "Antalya Klima Servisi",
+        url: SITE_URL,
+        logo: {
+            "@type": "ImageObject",
+            url: getAbsoluteUrl(OG_IMAGE_PATH),
+        },
+    },
+    url: getAbsoluteUrl(PAGE_PATH),
 };
 
-const jsonLdBreadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Rehber", item: `${SITE_URL}/rehber` },
-        { "@type": "ListItem", position: 3, name: "Çamaşır Makinesi Bakımı ve Arızaları", item: `${SITE_URL}/rehber/camasir-makinesi-bakimi` },
-    ],
-};
+const jsonLdBreadcrumb = buildBreadcrumbSchema([
+    { name: "Ana Sayfa", path: "/" },
+    { name: "Rehber", path: "/rehber" },
+    { name: "Çamaşır Makinesi Bakımı ve Arızaları", path: PAGE_PATH },
+]);
 
 export default function CamasirMakinesiPage() {
     return (

@@ -5,11 +5,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-
-const PHONE = "05426546113";
-const PHONE_DISPLAY = "0542 654 61 13";
+import { buildBreadcrumbSchema, getAbsoluteUrl, OG_IMAGE_PATH, PHONE, PHONE_DISPLAY, SITE_URL } from "@/utils/seo";
 const WA_LINK = `https://wa.me/90${PHONE.slice(1)}?text=Merhaba,%20klima%20servisi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`;
-const SITE_URL = "https://www.antalyaklimabeyazesyatamiri.com.tr";
 
 export interface ServiceFaq {
     question: string;
@@ -91,20 +88,34 @@ export default function ServicePageTemplate({
         name: `Antalya ${title}`,
         description: heroSubtitle,
         provider: { "@id": `${SITE_URL}/#business` },
+        image: getAbsoluteUrl(OG_IMAGE_PATH),
+        offers: {
+            "@type": "Offer",
+            priceCurrency: "TRY",
+            availability: "https://schema.org/InStock",
+            areaServed: "Antalya",
+        },
+        hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: `${title} hizmet kapsamı`,
+            itemListElement: serviceItems.map((item) => ({
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: item,
+                },
+            })),
+        },
         areaServed: { "@type": "City", name: "Antalya" },
         serviceType: title,
         url: `${SITE_URL}/hizmetler/${slug}`,
     };
 
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: SITE_URL },
-            { "@type": "ListItem", position: 2, name: "Hizmetlerimiz", item: `${SITE_URL}/#hizmetler` },
-            { "@type": "ListItem", position: 3, name: `Antalya ${title}`, item: `${SITE_URL}/hizmetler/${slug}` },
-        ],
-    };
+    const breadcrumbSchema = buildBreadcrumbSchema([
+        { name: "Ana Sayfa", path: "/" },
+        { name: "Hizmetler", path: "/#hizmetler" },
+        { name: `Antalya ${title}`, path: `/hizmetler/${slug}` },
+    ]);
 
     return (
         <>
@@ -241,7 +252,7 @@ export default function ServicePageTemplate({
                         <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
                             {title} İçin Hemen Arayın
                         </h2>
-                        <p className="text-blue-200 mb-6 text-lg">Ücretsiz keşif, net fiyat. Aynı gün servis.</p>
+                        <p className="text-blue-200 mb-6 text-lg">Ücretsiz keşif, net fiyat. Aynı gün tamir, bakım ve servis.</p>
                         <div className="flex flex-col sm:flex-row gap-3 justify-center">
                             <a
                                 href={`tel:${PHONE}`}
