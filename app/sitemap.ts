@@ -9,7 +9,7 @@ type SitemapEntry = {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const updatedAt = new Date("2026-05-16");
+    const updatedAt = new Date();
 
     const routes: SitemapEntry[] = [
         { path: "/", priority: 1, changeFrequency: "weekly" },
